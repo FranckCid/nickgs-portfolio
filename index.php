@@ -53,7 +53,7 @@
 				<div class="knowledge owl-section">
 					<h1>Conhecimentos</h1>
 					
-					<div class="owl-carousel">
+					<div class="owl-carousel" id="knowledge-carousel">
 						<div>
 							<img src="./img/knowledge/html5.svg">
 							<h4><strong>HTML5</strong></h4>
@@ -101,40 +101,56 @@
 						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 					</div>
 					<div class="back" style="">
-						<a href="#showcase"><i class="fas fa-sort-up"></i></a>
+						<a href="#knowledge-carousel"><i class="fas fa-sort-up"></i></a>
 					</div>
 				</section>
 
-				<div class="services owl-section">
+				<div class="services owl-section" id="services-carousel">
 					<h1>Produções</h1>
 					
 					<div class="owl-carousel">
 						<div>
-							<img src="./img/knowledge/html5.svg">
-							<h4><strong>HTML5</strong></h4>
+							<img src="./img/services/tivit.svg">
+							<h4><strong>TIVIT</strong></h4>
 						</div>
 						<div>
-							<img src="./img/knowledge/css3.svg">
-							<h4><strong>CSS3</strong></h4>
+							<img src="./img/services/senai.svg">
+							<h4><strong>SENAI</strong></h4>
 						</div>
 						<div>
-							<img src="./img/knowledge/js.svg">
-							<h4><strong>JavaScript</strong></h4>
+							<img src="./img/services/spacex.svg">
+							<h4><strong>SpaceX</strong></h4>
 						</div>
 						<div>
-							<img src="./img/knowledge/vuejs.svg">
-							<h4><strong>Vue.JS</strong></h4>
-						</div>
-						<div>
-							<img src="./img/knowledge/nodejs.svg">
-							<h4><strong>Node.JS</strong></h4>
-						</div>
-						<div>
-							<img src="./img/knowledge/jquery.svg">
-							<h4><strong>JQuery</strong></h4>
+							<img src="./img/services/atari.svg">
+							<h4><strong>Atari</strong></h4>
 						</div>
 					</div>
 				</div>
+
+				<section class="tip" id="services-tip">
+					<h1>Title</h1>
+					<div class="left col-md-6">
+						<img src="./img/pic.jpeg">
+					</div>
+					<div class="right col-md-6">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+					<div class="back" style="">
+						<a href="#services-carousel"><i class="fas fa-sort-up"></i></a>
+					</div>
+				</section>
 				
 			</div>
 		</div>
@@ -174,8 +190,11 @@
 			}
 		});
 
-		$(".tip .back i").on("click", function(){
-			$(".tip").fadeOut("slow");
+		$("#knowledge-tip .back i").on("click", function(){
+			$("#knowledge-tip").fadeOut("slow");
+		});
+		$("#services-tip .back i").on("click", function(){
+			$("#services-tip").fadeOut("slow");
 		});
 
 		$(".knowledge .owl-item").on("click", function(){
@@ -183,11 +202,15 @@
 			owl.trigger('to.owl.carousel', $(this).index()+1);
 			tip.fadeIn("slow");
 			tip.find("h1").text($(this).find("h4").text());
+			tip.find("img").attr("src", $(this).find("img").attr("src"));
 		});
 
 		$(".services .owl-item").on("click", function(){
-			owl.trigger('to.owl.carousel', $(this).index()+1);
-			$(".tip").fadeIn("slow");
+			var tip = $("#services-tip");
+			owl.trigger('to.owl.carousel', $(this).index()+3);
+			tip.fadeIn("slow");
+			tip.find("h1").text($(this).find("h4").text());
+			tip.find("img").attr("src", $(this).find("img").attr("src"));
 		});
 
 		 var $win = $(window);
@@ -202,6 +225,7 @@
 
 		$('#back-btn').hide();
 		$('#knowledge-tip').hide();
+		$('#services-tip').hide();
 
 	</script>
 	<script type="text/javascript">
