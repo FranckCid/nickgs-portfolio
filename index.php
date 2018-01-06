@@ -22,7 +22,7 @@
 				<div class="col-md-6 col-sm-6 left">
 					<img src="./img/pic.jpeg">
 					<h1>Nícollas Gabriel</h1>
-					<p>Informação Adicional, 18 anos</p>
+					<p>Inglês avançado, 18 anos</p>
 				</div>
 				<div class="col-md-6 col-sm-6 right">					
 					<div class="short">
@@ -155,14 +155,6 @@
 			</div>
 		</div>
 	</main>
-
-	<div id="back-btn">
-		<a href="#main-header"><i class="fas fa-arrow-alt-circle-up"></i></a>
-	</div>
-	
-	<footer id="main-footer">
-		<p>Copyright &copy; 2018</p>
-	</footer>
 
 	<script type="text/javascript"  src="./js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript"  src="./js/bootstrap.min.js"></script>

@@ -165,32 +165,6 @@ a{
 	padding-top: 10px;
 }
 
-/*Back Button*/
-#back-btn{
-	position: fixed;
-	right: 25px;
-	bottom: 25px;
-	font-size: 5rem;
-	background: #fefefe;
-	border-radius: 50%;
-}
-
-#back-btn a{
-	color: #111;
-}
-
-/*Footer*/
-#main-footer{
-	height: 10vh;
-	text-align: center;
-	background: #111;
-	margin: 0;
-	padding: 25px;
-	color: #ececec;
-	border-top: solid 10px #000;
-	box-sizing: border-box;
-}
-
 
 @media(max-width: 768px){
 	
