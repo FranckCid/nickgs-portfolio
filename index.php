@@ -92,12 +92,6 @@
 						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 					</div>
 					<div class="back" style="">
@@ -139,12 +133,6 @@
 						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 					</div>
 					<div class="back" style="">
@@ -159,6 +147,7 @@
 	<script type="text/javascript"  src="./js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript"  src="./js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="./js/scrolloverflow.min.js"></script>
 	<script type="text/javascript" src="./js/jquery.fullpage.min.js"></script>
 	<script type="text/javascript">
 		var owl = $('.owl-carousel');
@@ -183,11 +172,22 @@
 			}
 		});
 
+
+		var full = $("#full");
+
+		full.fullpage({
+			scrollOverflow: true
+		});
+
 		$("#knowledge-tip .back i").on("click", function(){
-			$("#knowledge-tip").fadeOut("slow");
+			$("#knowledge-tip").fadeOut("slow", function(){
+				full.fullpage.reBuild();
+			});
 		});
 		$("#services-tip .back i").on("click", function(){
-			$("#services-tip").fadeOut("slow");
+			$("#services-tip").fadeOut("slow", function(){				
+				full.fullpage.reBuild();
+			});
 		});
 
 		$(".knowledge .owl-item").on("click", function(){
@@ -196,6 +196,7 @@
 			tip.fadeIn("slow");
 			tip.find("h1").text($(this).find("h4").text());
 			tip.find("img").attr("src", $(this).find("img").attr("src"));
+			full.fullpage.reBuild();
 		});
 
 		$(".services .owl-item").on("click", function(){
@@ -204,62 +205,13 @@
 			tip.fadeIn("slow");
 			tip.find("h1").text($(this).find("h4").text());
 			tip.find("img").attr("src", $(this).find("img").attr("src"));
+			full.fullpage.reBuild();
 		});
 
-		 var $win = $(window);
-
-		$win.scroll(function () {
-			if ($win.scrollTop() == 0){
-				$('#back-btn').fadeOut(500);
-			}else{
-				$('#back-btn').fadeIn(500);
-			}
-		});
-
-		$('#back-btn').hide();
 		$('#knowledge-tip').hide();
 		$('#services-tip').hide();
 
-		$("#full").fullpage({
-			
-            scrollingSpeed: 1000,
-            css3: true
-		});
 
 	</script>
-	<!--script type="text/javascript">
-				$('a[href*="#"]').not('[href="#"]').not('[href="#0"]')
-				.click(function(event) {
-					// On-page links
-					if (
-						location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-						&& 
-						location.hostname == this.hostname
-						) {
-					  // Figure out element to scroll to
-				  var target = $(this.hash);
-				  target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-					  // Does a scroll target exist?
-					  if (target.length) {
-						// Only prevent default if animation is actually gonna happen
-						event.preventDefault();
-						$('html, body').animate({
-							scrollTop: target.offset().top
-						}, 1000, function() {
-						  // Callback after animation
-						  // Must change focus!
-						  var $target = $(target);
-						  $target.focus();
-						  if ($target.is(":focus")) { // Checking if the target was focused
-							return false;
-						  } else {
-							$target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-							$target.focus(); // Set focus again
-						};
-					});
-					}
-				}
-			});
-	<!-- </script> -->
 </body>
 </html>

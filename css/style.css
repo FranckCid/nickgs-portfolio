@@ -108,16 +108,18 @@ a{
 #showcase .owl-item img{
 	padding: 20px;
 	height: 100px;
-	filter: grayscale(100%);
+	filter: grayscale(85%);
 }
 
 #showcase .owl-item img:hover{
 	filter: none;
+	height: 120px;
 	transition: .3s;
 	cursor: pointer;
 }
 
 #showcase .owl-item.center img{
+	filter: none;
 	height: 150px;
 	transition: .5s;
 }
@@ -137,7 +139,7 @@ a{
 /*Tip*/
 .tip{
 	/*min-height: 100vh;*/
-	height: auto;
+	height: 40vh;
 	border-top: solid 1px #ccc;
 	border-bottom: solid 1px #ccc;
 	text-align: center;
@@ -148,7 +150,7 @@ a{
 }
 
 .tip .left img{
-	width: 100%;
+	height: 10vh;
 }
 
 .tip p{
