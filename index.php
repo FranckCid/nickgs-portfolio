@@ -81,7 +81,7 @@
 					</div>
 				</div>
 
-				<section class="tip">
+				<section class="tip" id="knowledge-tip">
 					<h1>Title</h1>
 					<div class="left col-md-6">
 						<img src="./img/pic.jpeg">
@@ -179,8 +179,10 @@
 		});
 
 		$(".knowledge .owl-item").on("click", function(){
+			var tip = $("#knowledge-tip");
 			owl.trigger('to.owl.carousel', $(this).index()+1);
-			$(".tip").fadeIn("slow");
+			tip.fadeIn("slow");
+			tip.find("h1").text($(this).find("h4").text());
 		});
 
 		$(".services .owl-item").on("click", function(){
@@ -199,6 +201,7 @@
 		});
 
 		$('#back-btn').hide();
+		$('#knowledge-tip').hide();
 
 	</script>
 	<script type="text/javascript">

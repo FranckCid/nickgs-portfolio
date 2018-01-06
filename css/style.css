@@ -184,6 +184,7 @@ a{
 	height: 10vh;
 	text-align: center;
 	background: #111;
+	margin: 0;
 	padding: 25px;
 	color: #ececec;
 	border-top: solid 10px #000;
