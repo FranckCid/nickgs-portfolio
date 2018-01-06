@@ -12,8 +12,8 @@
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
-
-	<header id="main-header">
+	<div id="full">
+	<header id="main-header" class="section">
 		<div class="background">
 			<img src="./img/bg.jpg">
 		</div>
@@ -46,7 +46,7 @@
 		</div>
 	</header>
 
-	<main id="showcase">
+	<main id="showcase" class="section">
 		<div class="container">
 			<div class="wrapper">
 				
@@ -154,11 +154,12 @@
 				
 			</div>
 		</div>
-	</main>
+	</main></div>
 
 	<script type="text/javascript"  src="./js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript"  src="./js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.fullpage.min.js"></script>
 	<script type="text/javascript">
 		var owl = $('.owl-carousel');
 		owl.owlCarousel({
@@ -219,8 +220,14 @@
 		$('#knowledge-tip').hide();
 		$('#services-tip').hide();
 
+		$("#full").fullpage({
+			
+            scrollingSpeed: 1000,
+            css3: true
+		});
+
 	</script>
-	<script type="text/javascript">
+	<!--script type="text/javascript">
 				$('a[href*="#"]').not('[href="#"]').not('[href="#0"]')
 				.click(function(event) {
 					// On-page links
@@ -253,6 +260,6 @@
 					}
 				}
 			});
-	</script>
+	<!-- </script> -->
 </body>
 </html>
