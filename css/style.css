@@ -199,11 +199,16 @@ a{
 
 	/*Header*/
 
-	#main-header .info .left img{
-		width: 50%;
-	}
+	/*#main-header .info .left img{/
+		width: 70%;
+	}*/
 
 	#main-header .right .social, #main-header .right p{
 		display: none;
+	}
+
+	/*Showcase*/
+	.owl-section{
+		margin-bottom: 15px;
 	}
 }
