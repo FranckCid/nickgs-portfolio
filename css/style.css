@@ -128,7 +128,8 @@ a{
 
 #showcase .owl-section h1{
 	text-align: center;
-	padding: 20px;
+	font-size: 200%;
+	padding: 20px 0 20px 0;
 	border-top: solid 1px #ccc;
 	border-bottom: solid 1px #ccc;
 }
@@ -137,7 +138,8 @@ a{
 .tip{
 	/*min-height: 100vh;*/
 	height: auto;
-	border: solid 1px #ccc;
+	border-top: solid 1px #ccc;
+	border-bottom: solid 1px #ccc;
 	text-align: center;
 }
 
@@ -194,7 +196,12 @@ a{
 	/*Global*/
 
 	.container{
-		width: 95%;
+		width: 100%;
+	}
+
+	#showcase .wrapper{
+		width: 100%;
+		padding: 0;
 	}
 
 	/*Header*/
