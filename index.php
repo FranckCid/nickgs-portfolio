@@ -91,161 +91,61 @@
 								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						</div>
+						<div class="back" style="">
+							<a href="#knowledge-carousel"><i class="fas fa-sort-up"></i></a>
+						</div>
+					</section>
+
+					<div class="services owl-section">
+						<h1>Produções</h1>
+
+						<div class="owl-carousel" id="services-carousel">
+							<div>
+								<img src="./img/services/tivit.svg">
+								<h4><strong>TIVIT</strong></h4>
+							</div>
+							<div>
+								<img src="./img/services/senai.svg">
+								<h4><strong>SENAI</strong></h4>
+							</div>
+							<div>
+								<img src="./img/services/spacex.svg">
+								<h4><strong>SpaceX</strong></h4>
+							</div>
+							<div>
+								<img src="./img/services/atari.svg">
+								<h4><strong>Atari</strong></h4>
+							</div>
+						</div>
+					</div>
+
+					<section class="tip" id="services-tip">
+						<h1>Title</h1>
+						<div class="left col-md-6">
+							<img src="">
+						</div>
+						<div class="right col-md-6">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 							</div>
 							<div class="back" style="">
-								<a href="#knowledge-carousel"><i class="fas fa-sort-up"></i></a>
+								<a href="#services-carousel"><i class="fas fa-sort-up"></i></a>
 							</div>
 						</section>
 
-						<div class="services owl-section">
-							<h1>Produções</h1>
-
-							<div class="owl-carousel" id="services-carousel">
-								<div>
-									<img src="./img/services/tivit.svg">
-									<h4><strong>TIVIT</strong></h4>
-								</div>
-								<div>
-									<img src="./img/services/senai.svg">
-									<h4><strong>SENAI</strong></h4>
-								</div>
-								<div>
-									<img src="./img/services/spacex.svg">
-									<h4><strong>SpaceX</strong></h4>
-								</div>
-								<div>
-									<img src="./img/services/atari.svg">
-									<h4><strong>Atari</strong></h4>
-								</div>
-							</div>
-						</div>
-
-						<section class="tip" id="services-tip">
-							<h1>Title</h1>
-							<div class="left col-md-6">
-								<img src="">
-							</div>
-							<div class="right col-md-6">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-									consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-									cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-									proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-								</div>
-								<div class="back" style="">
-									<a href="#services-carousel"><i class="fas fa-sort-up"></i></a>
-								</div>
-							</section>
-
-						</div>
 					</div>
-				</main>
+				</div>
+			</main>
 
-				<script type="text/javascript"  src="./js/jquery-3.2.1.min.js"></script>
-				<script type="text/javascript"  src="./js/bootstrap.min.js"></script>
-				<script type="text/javascript" src="./js/owl.carousel.min.js"></script>
-				<script type="text/javascript" src="./js/jquery.scrollify.js"></script>
-				<script type="text/javascript">
-
-				$.scrollify({
-					section : ".sec",
-					interstitialSection : "",
-					easing: "easeOutExpo",
-					scrollSpeed: 500,
-					offset : 0,
-					scrollbars: true,
-					standardScrollElements: "",
-					setHeights: true,
-					overflowScroll: true,
-					updateHash: true,
-					touchScroll:true
-				});
-
-				$('#knowledge-carousel').owlCarousel({
-					center:true,
-					loop:true,
-					margin:10,
-					autoplay:true,
-					autoplayTimeout:2000,
-					autoplayHoverPause:true,
-					nav: true,
-					navText: [
-						"<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>",
-						"<i class=\"fa fa-chevron-right\" aria-hidden=\"true\"></i>"
-					],
-					responsiveClass:true,
-					responsive:{
-						0:{
-							items:1
-						},
-						600:{
-							items:3
-						},
-						1000:{
-							items:5
-						}
-					}
-				});
-				$('#services-carousel').owlCarousel({
-					center:true,
-					loop:true,
-					margin:10,
-					autoplay:true,
-					autoplayTimeout:2000,
-					autoplayHoverPause:true,
-					nav: true,
-					navText: [
-						"<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>",
-						"<i class=\"fa fa-chevron-right\" aria-hidden=\"true\"></i>"
-					],
-					responsiveClass:true,
-					responsive:{
-						0:{
-							items:1
-						},
-						600:{
-							items:2
-						},
-						1000:{
-							items:3
-						}
-					}
-				});
-
-				$("#knowledge-tip .back i").on("click", function(){
-					$("#knowledge-tip").fadeOut("slow", function(){
-						$.scrollify.update()
-					});
-				});
-				$("#services-tip .back i").on("click", function(){
-					$("#services-tip").fadeOut("slow", function(){
-						$.scrollify.update()
-					});
-				});
-
-				$(".knowledge .owl-item").on("click", function(){
-					var tip = $("#knowledge-tip");
-					owl.trigger('to.owl.carousel', $(this).index()+1);
-					tip.fadeIn("slow");
-					tip.find("h1").text($(this).find("h4").text());
-					tip.find("img").attr("src", $(this).find("img").attr("src"));
-					$.scrollify.update()
-				});
-
-				$(".services .owl-item").on("click", function(){
-					var tip = $("#services-tip");
-					owl.trigger('to.owl.carousel', $(this).index()+3);
-					tip.fadeIn("slow");
-					tip.find("h1").text($(this).find("h4").text());
-					tip.find("img").attr("src", $(this).find("img").attr("src"));
-					$.scrollify.update()
-				});
-
-				$('#knowledge-tip').hide();
-				$('#services-tip').hide();
-				$.scrollify.update();
-
-				</script>
-			</body>
-			</html>
+			<script type="text/javascript"  src="./js/jquery-3.2.1.min.js"></script>
+			<script type="text/javascript"  src="./js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="./js/owl.carousel.min.js"></script>
+			<script type="text/javascript" src="./js/jquery.scrollify.js"></script>
+			<script type="text/javascript" src="./js/script.js"></script>
+		</body>
+		</html>

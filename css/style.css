@@ -13,7 +13,7 @@
 
 body{
 	/*background: #ddd;*/
-	background: #ececec;
+	background: #fff;
 }
 
 a{
@@ -44,7 +44,7 @@ a{
 
 #main-header .info{
 	height: 65vh;	
-	margin-top: 25vh;
+	margin-top: 20vh;
 	box-sizing: border-box;
 }
 
@@ -80,8 +80,8 @@ a{
 
 #main-header .next{
 	text-align: center;
-	font-size: 3rem;
-	margin: 0px;
+	font-size: 3.5rem;
+	margin-top: 20px;
 }
 
 #main-header .next:hover{	
@@ -101,13 +101,17 @@ a{
 	height: 45vh;
 }
 
+#showcase .owl-item{
+	height: 100%;
+}
+
 #showcase .owl-item img{
 	padding: 20px;
 	height: 100px;
 	filter: grayscale(85%);
 }
 
-#showcase .owl-item img:hover{
+#showcase .owl-item:hover img{
 	filter: none;
 	height: 120px;
 	transition: .3s;
@@ -130,6 +134,38 @@ a{
 	padding: 20px 0 20px 0;
 	border-top: solid 1px #ccc;
 	border-bottom: solid 1px #ccc;
+}
+
+.owl-nav{
+	z-index: -1;
+	top: 7vh;
+	height: 100px;
+	width: 100%;
+	position: absolute;
+}
+
+.owl-prev, .owl-next{
+	z-index: 2;
+	font-size: 200%;
+	color: #ddd;
+}
+
+.owl-prev{
+	float: left;
+	margin-left: -25px;
+	
+}
+
+.owl-next{
+	float: right;
+	margin-right: -25px;
+}
+
+.owl-prev:hover, .owl-next:hover{
+	font-size: 250%;
+	margin-top: 0vh;
+	color: #111;
+	transition: .3s;
 }
 
 /*Tip*/
@@ -238,44 +274,29 @@ a{
 	.tip img{
 		width: 100%;
 	}
+
+	/*Navs*/
+
+	.owl-prev{
+		margin-left: 10px;
+		
+	}
+
+	.owl-next{
+		margin-right: 0;
+	}
 }
 
 /* Animations */
 
 @keyframes bounce{
 	0%{padding: 0;}
-	50%{padding: 15px;}
+	50%{padding: 20px;}
 	100%{padding: 0;}
 }
 
 #main-header .next{
 	animation-name: bounce;
-	animation-duration: 1s;
+	animation-duration: .8s;
     animation-iteration-count: infinite;
-}
-
-.owl-nav{
-	top: 7vh;
-	height: 100px;
-	width: 100%;
-	position: absolute;
-}
-
-.owl-prev{
-	float: left;
-	font-size: 200%;
-	color: #ddd;
-}
-
-.owl-next{
-	float: right;
-	font-size: 200%;
-	color: #ddd;
-}
-
-.owl-prev:hover, .owl-next:hover{
-	font-size: 250%;
-	margin-top: 0vh;
-	color: #111;
-	transition: .3s;
 }
