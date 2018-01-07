@@ -129,3 +129,16 @@ $(".services .owl-item").on("click", function(){
 $('#knowledge-tip').hide();
 $('#services-tip').hide();
 $.scrollify.update();
+
+$(function () {
+	var $els;
+	var updateHeight = function () {
+		$els.css('height', ''); // reset previously-set height
+		$els.height($els.height());// set the current height in px
+	};
+	if (/android/i.test(navigator.userAgent)) {
+		$els = $('ELEMENTS-WITH-VH-UNITS');
+		updateHeight();//set instantly
+		$(window).on('orientationchange.vh-height-set', updateHeight);
+	}
+});
