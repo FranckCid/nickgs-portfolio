@@ -86,6 +86,7 @@ $("#knowledge-tip .back i").on("click", function(){
 		$.scrollify.update()
 		knowledge_open = false;
 		owl_knowledge.trigger('play.owl.autoplay');
+		$.scrollify.move("#2");
 	});
 });
 $("#services-tip .back i").on("click", function(){
@@ -93,6 +94,7 @@ $("#services-tip .back i").on("click", function(){
 		$.scrollify.update()
 		services_open = false;
 		owl_services.trigger('play.owl.autoplay');
+		$.scrollify.move("#2");
 	});
 });
 
@@ -105,7 +107,9 @@ $(".knowledge .owl-item").on("click", function(){
 	$.scrollify.update()
 	knowledge_open = true;
 	owl_knowledge.trigger('stop.owl.autoplay');
-	$("body").scrollTop($("#knowledge-tip").scrollTop() + 100);
+	$('html, body').animate({
+		scrollTop: tip.offset().top
+	}, 2000);
 });
 
 $(".services .owl-item").on("click", function(){
@@ -117,6 +121,9 @@ $(".services .owl-item").on("click", function(){
 	$.scrollify.update()
 	services_open = true;
 	owl_services.trigger('stop.owl.autoplay');
+	$('html, body').animate({
+		scrollTop: tip.offset().top
+	}, 2000);
 });
 
 $('#knowledge-tip').hide();
