@@ -20,7 +20,7 @@
 			<div class="info">
 				<div class="col-md-6 col-sm-6 left">
 					<div class="short">
-						<img src="./img/pic.jpeg">
+						<img src="./img/pic.jpg">
 						<h1>Nícollas Gabriel</h1>
 						<p>Inglês avançado, 18 anos</p>
 					</div>
@@ -170,6 +170,7 @@
 			autoplay:true,
 			autoplayTimeout:2000,
 			autoplayHoverPause:true,
+			nav: true,
 			responsiveClass:true,
 			responsive:{
 				0:{

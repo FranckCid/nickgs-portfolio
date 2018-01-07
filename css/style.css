@@ -228,7 +228,6 @@ a{
 		margin-top: 22vh;
 	}
 
-
 	/*Showcase*/
 	.owl-section{
 		margin-bottom: 15px;
@@ -258,14 +257,19 @@ a{
     animation-iteration-count: infinite;
 }
 
-/*#main-header .next{/*
-	text-align: center;
-	font-size: 3rem;
-	margin: 15px;
+.owl-nav{
+	top: 50%;
+	height: 100px;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	position: absolute;
 }
 
-#main-header .next:hover{
-	padding: 15px;
-	transition: .5s;
-	cursor: pointer;
-}*/
+.owl-prev{
+	float: left;
+}
+
+.owl-next{
+	float: right;
+}
