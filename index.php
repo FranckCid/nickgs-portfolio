@@ -149,8 +149,21 @@
 	<script type="text/javascript">
 
 		$.scrollify({
-			section: ".sec",
-					updateHash:false
+			section : ".sec",
+			interstitialSection : "",
+			easing: "easeOutExpo",
+			scrollSpeed: 500,
+			offset : 0,
+			scrollbars: true,
+			standardScrollElements: "",
+			setHeights: true,
+			overflowScroll: true,
+			updateHash: true,
+			touchScroll:true,
+			before:function() {},
+			after:function() {},
+			afterResize:function() {},
+			afterRender:function() {}
 		});
 
 		var owl = $('.owl-carousel');

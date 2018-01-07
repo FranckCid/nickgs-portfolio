@@ -188,4 +188,13 @@ a{
 	.owl-section{
 		margin-bottom: 15px;
 	}
+
+	/*Tip*/
+	.tip{
+		height: auto;
+	}
+
+	.tip img{
+		width: 100%;
+	}
 }
