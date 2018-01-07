@@ -98,38 +98,30 @@ $("#services-tip .back i").on("click", function(){
 	});
 });
 
-$(".knowledge .owl-item").on("click", function(){
-	var tip = $("#knowledge-tip");
-	owl_knowledge.trigger('to.owl.carousel', $(this).index()+1);
-	tip.slideDown("slow");
-	tip.find("h1").text($(this).find("h4").text());
-	tip.find("img").attr("src", $(this).find("img").attr("src"));
+function setTip(tip, title, image, desc){	
+	tip.find("h1").text(title);
+	tip.find("img").attr("src", image);	
+	tip.slideDown("slow");	
 	$.scrollify.update()
-	knowledge_open = true;
-	owl_knowledge.trigger('stop.owl.autoplay');
 	$('html, body').animate({
 		scrollTop: tip.offset().top
 	}, 1000);
+}
+
+$(".knowledge .owl-item").on("click", function(){
+	setTip($("#knowledge-tip"), $(this).find("h4").text(), $(this).find("img").attr("src"), 0);
+	owl_knowledge.trigger('to.owl.carousel', $(this).index()+1);
+	knowledge_open = true;
+	owl_knowledge.trigger('stop.owl.autoplay');
 });
 
 $(".services .owl-item").on("click", function(){
-	var tip = $("#services-tip");
 	owl_services.trigger('to.owl.carousel', $(this).index()+1);
-	tip.slideDown("slow");
-	tip.find("h1").text($(this).find("h4").text());
-	tip.find("img").attr("src", $(this).find("img").attr("src"));
-	$.scrollify.update()
-	services_open = true;
 	owl_services.trigger('stop.owl.autoplay');
-	$('html, body').animate({
-		scrollTop: tip.offset().top
-	}, 1000);
+	setTip($("#services-tip"), $(this).find("h4").text(), $(this).find("img").attr("src"), 0);
+	services_open = true;
 });
 
 $('#knowledge-tip').hide();
 $('#services-tip').hide();
 $.scrollify.update();
-
-var header = $("#main-header");
-var initialHv = header.css("height");
-header.css("height", initialHv);
