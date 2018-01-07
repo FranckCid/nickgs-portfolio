@@ -27,7 +27,6 @@ a{
 
 /*Header*/
 #main-header{
-	height: 100vh;
 	color: #ececec;
 }
 
@@ -95,7 +94,6 @@ a{
 
 /*Showcase*/
 #showcase{
-	min-height: 90vh;
 	box-sizing: border-box;
 	background: #fefefe;
 }
@@ -138,7 +136,6 @@ a{
 
 /*Tip*/
 .tip{
-	/*min-height: 100vh;*/
 	height: 40vh;
 	border-top: solid 1px #ccc;
 	border-bottom: solid 1px #ccc;
@@ -182,10 +179,6 @@ a{
 	}
 
 	/*Header*/
-
-	/*#main-header .info .left img{/
-		width: 70%;
-	}*/
 
 	#main-header .right .social, #main-header .right p{
 		display: none;

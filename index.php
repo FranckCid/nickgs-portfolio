@@ -1,10 +1,9 @@
-
-<!DOCTYPE html5>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 	<title>Nícollas Gabriel - Portfolio</title>
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/owl.carousel.min.css">
@@ -12,8 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
-	<div id="full">
-	<header id="main-header" class="section">
+	<header id="main-header" class="sec">
 		<div class="background">
 			<img src="./img/bg.jpg">
 		</div>
@@ -40,13 +38,13 @@
 					</div>
 				</div>
 			</div>
-			<div class="next col-md-12">
-				<a href="#showcase"><i class="fas fa-sort-down"></i></a>
+			<div class="next col-md-12" onclick="$.scrollify.next()">
+				<a><i class="fas fa-sort-down"></i></a>
 			</div>
 		</div>
 	</header>
 
-	<main id="showcase" class="section">
+	<main id="showcase" class="sec">
 		<div class="container">
 			<div class="wrapper">
 				
@@ -142,14 +140,19 @@
 				
 			</div>
 		</div>
-	</main></div>
+	</main>
 
 	<script type="text/javascript"  src="./js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript"  src="./js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./js/owl.carousel.min.js"></script>
-	<script type="text/javascript" src="./js/scrolloverflow.min.js"></script>
-	<script type="text/javascript" src="./js/jquery.fullpage.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.scrollify.js"></script>
 	<script type="text/javascript">
+
+		$.scrollify({
+			section: ".sec",
+					updateHash:false
+		});
+
 		var owl = $('.owl-carousel');
 		owl.owlCarousel({
 			center:true,
@@ -172,21 +175,14 @@
 			}
 		});
 
-
-		var full = $("#full");
-
-		full.fullpage({
-			scrollOverflow: true
-		});
-
 		$("#knowledge-tip .back i").on("click", function(){
 			$("#knowledge-tip").fadeOut("slow", function(){
-				full.fullpage.reBuild();
+				$.scrollify.update()
 			});
 		});
 		$("#services-tip .back i").on("click", function(){
-			$("#services-tip").fadeOut("slow", function(){				
-				full.fullpage.reBuild();
+			$("#services-tip").fadeOut("slow", function(){
+				$.scrollify.update()
 			});
 		});
 
@@ -196,7 +192,7 @@
 			tip.fadeIn("slow");
 			tip.find("h1").text($(this).find("h4").text());
 			tip.find("img").attr("src", $(this).find("img").attr("src"));
-			full.fullpage.reBuild();
+			$.scrollify.update()
 		});
 
 		$(".services .owl-item").on("click", function(){
@@ -205,12 +201,12 @@
 			tip.fadeIn("slow");
 			tip.find("h1").text($(this).find("h4").text());
 			tip.find("img").attr("src", $(this).find("img").attr("src"));
-			full.fullpage.reBuild();
+			$.scrollify.update()
 		});
 
 		$('#knowledge-tip').hide();
 		$('#services-tip').hide();
-
+		$.scrollify.update();
 
 	</script>
 </body>
