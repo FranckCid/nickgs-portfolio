@@ -10,7 +10,7 @@ $.scrollify({
 	scrollSpeed: 500,
 	offset : 0,
 	scrollbars: true,
-	standardScrollElements: "",
+	standardScrollElements: ".wrapper",
 	setHeights: true,
 	overflowScroll: true,
 	updateHash: true,
