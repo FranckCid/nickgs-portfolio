@@ -134,7 +134,7 @@ a{
 
 /*Tip*/
 .tip{
-	height: 40vh;
+	height: auto;
 	border-top: solid 1px #ccc;
 	border-bottom: solid 1px #ccc;
 	text-align: center;
@@ -234,9 +234,6 @@ a{
 	}
 
 	/*Tip*/
-	.tip{
-		height: auto;
-	}
 
 	.tip img{
 		width: 100%;
@@ -258,18 +255,27 @@ a{
 }
 
 .owl-nav{
-	top: 50%;
+	top: 7vh;
 	height: 100px;
-	padding: 0;
-	margin: 0;
 	width: 100%;
 	position: absolute;
 }
 
 .owl-prev{
 	float: left;
+	font-size: 200%;
+	color: #ddd;
 }
 
 .owl-next{
 	float: right;
+	font-size: 200%;
+	color: #ddd;
+}
+
+.owl-prev:hover, .owl-next:hover{
+	font-size: 250%;
+	margin-top: 0vh;
+	color: #111;
+	transition: .3s;
 }
