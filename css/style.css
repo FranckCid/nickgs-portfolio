@@ -85,7 +85,7 @@ a{
 }
 
 #main-header .next:hover{	
-    animation: pause;
+	animation: pause;
 	transition: .5s;
 	cursor: pointer;
 }
@@ -290,13 +290,20 @@ a{
 /* Animations */
 
 @keyframes bounce{
-	0%{padding: 0;}
-	50%{padding: 20px;}
-	100%{padding: 0;}
+	0%{transform: translate(0, -10px);}
+	50%{transform: translate(0, 0px);}
+	100%{transform: translate(0, -10px);}
 }
 
 #main-header .next{
 	animation-name: bounce;
 	animation-duration: .8s;
-    animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+
+#main-header .social a:hover i{
+	animation-name: bounce;
+	animation-duration: .8s;
+	animation-iteration-count: infinite;
+	color: #fff;
 }
