@@ -18,9 +18,11 @@
 		<div class="container">
 			<div class="info">
 				<div class="col-md-6 col-sm-6 left">
-					<img src="./img/pic.jpeg">
-					<h1>Nícollas Gabriel</h1>
-					<p>Inglês avançado, 18 anos</p>
+					<div class="short">
+						<img src="./img/pic.jpeg">
+						<h1>Nícollas Gabriel</h1>
+						<p>Inglês avançado, 18 anos</p>
+					</div>
 				</div>
 				<div class="col-md-6 col-sm-6 right">					
 					<div class="short">
