@@ -3,6 +3,8 @@ var owl_services = $('#services-carousel');
 var knowledge_open = false;
 var services_open = false;
 
+// Smooth Scroll
+
 $.scrollify({
 	section : ".sec",
 	interstitialSection : "",
@@ -16,6 +18,8 @@ $.scrollify({
 	updateHash: true,
 	touchScroll:true
 });
+
+// Owl carousel
 
 owl_knowledge.owlCarousel({
 	center:true,
@@ -67,6 +71,8 @@ owl_services.owlCarousel({
 		}
 	}
 });
+
+// Event handle
 
 $('#knowledge-carousel > div').mouseleave(function(e){
 	if(!knowledge_open){
@@ -125,3 +131,41 @@ $(".services .owl-item").on("click", function(){
 $('#knowledge-tip').hide();
 $('#services-tip').hide();
 $.scrollify.update();
+
+// Scroll reveal
+
+window.sr = ScrollReveal();
+sr.reveal(".left img", {
+	duration: 1000,
+	origin: 'top'
+});
+
+sr.reveal(".left h1, .left p", {
+	duration: 2000,
+	origin: 'left'
+});
+
+sr.reveal(".right p", {
+	duration: 1000,
+	origin: 'right'
+});
+
+sr.reveal(".social", {
+	duration: 2000,
+	origin: 'top'
+});
+
+sr.reveal(".next", {
+	duration: 1000,
+	origin: 'top'
+});
+
+sr.reveal(".owl-section h1", {
+	duration: 1000,
+	origin: 'top'
+});
+
+sr.reveal(".owl-carousel", {
+	duration: 2000,
+	origin: 'bottom'
+});

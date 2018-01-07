@@ -152,6 +152,7 @@
 	<script type="text/javascript"  src="./js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="./js/jquery.scrollify.js"></script>
+	<script type="text/javascript" src="./js/scrollreveal.min.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>
 </body>
 </html>
