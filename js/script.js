@@ -109,7 +109,7 @@ $(".knowledge .owl-item").on("click", function(){
 	owl_knowledge.trigger('stop.owl.autoplay');
 	$('html, body').animate({
 		scrollTop: tip.offset().top
-	}, 2000);
+	}, 1000);
 });
 
 $(".services .owl-item").on("click", function(){
@@ -123,7 +123,7 @@ $(".services .owl-item").on("click", function(){
 	owl_services.trigger('stop.owl.autoplay');
 	$('html, body').animate({
 		scrollTop: tip.offset().top
-	}, 2000);
+	}, 1000);
 });
 
 $('#knowledge-tip').hide();

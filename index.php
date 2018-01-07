@@ -38,7 +38,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="next col-md-12" onclick="$.scrollify.next()">
+				<div class="next col-md-12" onclick="$.scrollify.move('#2');">
 					<i class="fas fa-sort-down"></i>
 				</div>
 			</div>
