@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/owl.carousel.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/fontawesome-all.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<!-- <link rel="stylesheet" type="text/css" href="./css/portfolio.min.css"> -->
 </head>
 <body>
 	<header id="main-header" class="sec">
@@ -38,7 +39,7 @@
 				</div>
 			</div>
 			<div class="next col-md-12" onclick="$.scrollify.next()">
-				<a><i class="fas fa-sort-down"></i></a>
+				<i class="fas fa-sort-down"></i>
 			</div>
 		</div>
 	</header>

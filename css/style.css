@@ -81,11 +81,11 @@ a{
 #main-header .next{
 	text-align: center;
 	font-size: 3rem;
-	margin: 15px;
+	margin: 0px;
 }
 
-#main-header .next:hover{
-	padding: 15px;
+#main-header .next:hover{	
+    animation: pause;
 	transition: .5s;
 	cursor: pointer;
 }
@@ -146,6 +146,7 @@ a{
 
 .tip .left img{
 	height: 10vh;
+	margin: 10px;
 }
 
 .tip p{
@@ -185,6 +186,10 @@ a{
 	#main-header .info .left{
 		padding-top: 10vh;
 		height: 50vh;
+	}
+
+	#main-header .info .left h1{
+		font-size: 200%;
 	}
 
 	#main-header .info .left img{
@@ -238,3 +243,29 @@ a{
 		width: 100%;
 	}
 }
+
+/* Animations */
+
+@keyframes bounce{
+	0%{padding: 0;}
+	50%{padding: 15px;}
+	100%{padding: 0;}
+}
+
+#main-header .next{
+	animation-name: bounce;
+	animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+/*#main-header .next{/*
+	text-align: center;
+	font-size: 3rem;
+	margin: 15px;
+}
+
+#main-header .next:hover{
+	padding: 15px;
+	transition: .5s;
+	cursor: pointer;
+}*/
