@@ -345,6 +345,11 @@ a{
 	.owl-section{
 		min-height: 300px;
 	}
+
+	.tip .left img{
+		min-width: 100%;
+		min-height: 50vh;
+	}
 }
 
 @media(min-width: 760px) and (max-height: 760px){
