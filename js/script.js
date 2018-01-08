@@ -92,14 +92,17 @@ function closeKnowledgeTip(){
 		$("#knowledge-tip h1").text("Title");
 		knowledge_open = false;
 		owl_knowledge.trigger('play.owl.autoplay');
-		if(!knowledge_open && !services_open){
-			$.scrollify({
-				standardScrollElements: ""
-			});
-		}
+		// if(!knowledge_open && !services_open){
+		// 	$.scrollify({
+		// 		standardScrollElements: ""
+		// 	});
+		// }
 		$.scrollify.update();
-		$.scrollify.move("#2");
+		// $.scrollify.move("#2");
 	});
+	$('html, body').animate({
+		scrollTop: $("#showcase").offset().top
+	}, 200);
 }
 
 function closeServicesTip(){
@@ -107,14 +110,17 @@ function closeServicesTip(){
 		$("#services-tip h1").text("Title");
 		services_open = false;
 		owl_services.trigger('play.owl.autoplay');
-		$.scrollify.move("#2");
-		if(!knowledge_open && !services_open){
-			$.scrollify({
-				standardScrollElements: ""}
-				);
-		}
-		$.scrollify.update()
+		// $.scrollify.move("#2");
+		// if(!knowledge_open && !services_open){
+		// 	$.scrollify({
+		// 		standardScrollElements: ""}
+		// 		);
+		// }
+		$.scrollify.update()		
 	});
+	$('html, body').animate({
+		scrollTop: $("#showcase").offset().top
+	}, 200);
 }
 
 $("#services-tip .back i").on("click", function(){
