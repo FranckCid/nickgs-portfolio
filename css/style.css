@@ -319,7 +319,8 @@ a{
 
 @media(max-height: 546px) and (min-width: 468px){
 	#main-header .info{
-		margin-top: 8vh;
+		margin-top: 5vh;
+		font-size: 100%;
 	}
 
 	#main-header .left.col-md-6 img{
@@ -327,12 +328,13 @@ a{
 	}
 
 	#main-header .right.col-md-6{
-		margin-top: 8vh;
+		margin-top: 5vh;
 		height: auto;
 	}
 
 	#main-header .next{
-		margin: 0 0 15vh 0;
+		margin-top: 5vh;
+		margin-bottom: 15vh;
 	}
 
 	.left, .right{
@@ -342,6 +344,13 @@ a{
 
 	.owl-section{
 		min-height: 300px;
+	}
+}
+
+@media(min-width: 760px) and (max-height: 760px){
+	#main-header .right.col-md-6{
+		margin-top: 70vh;
+		height: auto;
 	}
 }
 
