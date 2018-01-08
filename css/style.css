@@ -352,10 +352,10 @@ a{
 	}
 }
 
-@media(max-height: 530px) and (min-width: 468px){
+@media(max-height: 360px) and (min-width: 468px){
 	#main-header .info{
 		margin-top: 2vh;
-		font-size: 95%;
+		font-size: 1rem;
 	}
 
 	#main-header .right.col-md-6{
@@ -363,7 +363,7 @@ a{
 	}
 
 	#main-header .next{
-		margin-top: 0;
+		margin-top: 2rem;
 		margin-bottom: 10vh;
 	}
 }
