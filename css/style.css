@@ -310,7 +310,7 @@ a{
 	}
 }
 
-@media(max-height: 500px){
+@media(max-height: 546px){
 	#main-header .info{
 		margin-top: 10vh;
 	}
@@ -329,7 +329,7 @@ a{
 	}
 
 	.owl-section{
-		height: 70vh;
+		height: auto;
 	}
 }
 
