@@ -3,6 +3,15 @@ var owl_services = $('#services-carousel');
 var knowledge_open = false;
 var services_open = false;
 
+// Give an index to each item
+owl_knowledge.children().each( function( index ) {
+  $(this).attr( 'data-position', index ); // NB: .attr() instead of .data()
+});
+
+owl_services.children().each( function( index ) {
+  $(this).attr( 'data-position', index ); // NB: .attr() instead of .data()
+});
+
 // Smooth Scroll
 
 $.scrollify({
@@ -98,13 +107,7 @@ function closeKnowledgeTip(){
 		$("#knowledge-tip h1").text("Title");
 		knowledge_open = false;
 		owl_knowledge.trigger('play.owl.autoplay');
-		// if(!knowledge_open && !services_open){
-		// 	$.scrollify({
-		// 		standardScrollElements: ""
-		// 	});
-		// }
 		$.scrollify.update();
-		// $.scrollify.move("#2");
 	});
 	topOf("#showcase");
 }
@@ -114,12 +117,6 @@ function closeServicesTip(){
 		$("#services-tip h1").text("Title");
 		services_open = false;
 		owl_services.trigger('play.owl.autoplay');
-		// $.scrollify.move("#2");
-		// if(!knowledge_open && !services_open){
-		// 	$.scrollify({
-		// 		standardScrollElements: ""}
-		// 		);
-		// }
 		$.scrollify.update()		
 	});
 	topOf("#showcase");
@@ -141,6 +138,14 @@ function setTip(tip, title, image, desc){
 	$.scrollify.update()
 }
 
+$(document).on("click", '#knowledge-carousel .owl-item>div', function(){
+	owl_knowledge.trigger('to.owl.carousel', $(this).data('position'));
+});
+
+$(document).on("click", '#services-carousel .owl-item>div', function(){
+	owl_services.trigger('to.owl.carousel', $(this).data('position'));
+});
+
 $(".knowledge .owl-item").on("click", function(){
 	if($("#knowledge-tip h1").text() == $(this).find("h4").text()){
 		closeKnowledgeTip();
@@ -148,9 +153,8 @@ $(".knowledge .owl-item").on("click", function(){
 	}
 	setTip($("#knowledge-tip"), $(this).find("h4").text(), $(this).find("img").attr("src"), 0);
 	topOf("#showcase");
-	owl_knowledge.trigger('to.owl.carousel', $(this).index()+1);
-	knowledge_open = true;
 	owl_knowledge.trigger('stop.owl.autoplay');
+	knowledge_open = true;
 });
 
 $(".services .owl-item").on("click", function(){
@@ -159,7 +163,6 @@ $(".services .owl-item").on("click", function(){
 		return;
 	}
 	topOf("#services-carousel");
-	owl_services.trigger('to.owl.carousel', $(this).index()+1);
 	owl_services.trigger('stop.owl.autoplay');
 	setTip($("#services-tip"), $(this).find("h4").text(), $(this).find("img").attr("src"), 0);
 	services_open = true;

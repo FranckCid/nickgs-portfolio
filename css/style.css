@@ -279,6 +279,8 @@ a{
 
 	/*Showcase*/
 	.owl-section{
+		width: 80%;
+		margin: auto;
 		margin-bottom: 15px;
 	}
 
@@ -294,13 +296,17 @@ a{
 
 	/*Navs*/
 
+
+
 	.owl-prev{
-		margin-left: 10px;
+		margin-left: -20px;
+		z-index: 30;
 		
 	}
 
 	.owl-next{
-		margin-right: 0;
+		margin-right: -20px;
+		z-index: 30;
 	}
 }
 
