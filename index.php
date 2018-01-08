@@ -41,7 +41,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="next col-md-12" onclick="$.scrollify.move('#2');">
+			<div class="next col-md-12" onclick="topOf('#showcase');">
 				<i class="fas fa-sort-down"></i>
 			</div>
 		</div>
