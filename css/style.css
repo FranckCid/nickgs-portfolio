@@ -280,6 +280,7 @@ a{
 	/*Showcase*/
 	.owl-section{
 		width: 80%;
+		height: auto;
 		margin: auto;
 		margin-bottom: 15px;
 	}
@@ -295,7 +296,6 @@ a{
 	}
 
 	/*Navs*/
-
 
 
 	.owl-prev{
