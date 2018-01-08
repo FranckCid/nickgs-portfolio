@@ -165,6 +165,7 @@ function updateTip(tip, isOpen, carousel){
 
 $("#knowledge-carousel .owl-next").on("click", function(){	
 	updateTip("#knowledge-tip", knowledge_open, "#knowledge-carousel");
+	knowledge_open = true;
 	if (isMobile()) 
 		topOf("#knowledge-carousel");
 	else
@@ -173,6 +174,7 @@ $("#knowledge-carousel .owl-next").on("click", function(){
 
 $("#services-carousel .owl-next").on("click", function(){
 	updateTip("#services-tip", services_open, "#services-carousel");
+	services_open = true;
 	topOf("#services-carousel");
 });
 
