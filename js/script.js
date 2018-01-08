@@ -14,8 +14,6 @@ owl_services.children().each( function( index ) {
 
 // Smooth Scroll
 
-
-
 if(!(/Android|webOS|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent) )) { //if not these userAgents
 	$.scrollify({
 		section : ".sec",
@@ -33,8 +31,6 @@ if(!(/Android|webOS|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navig
 }else{
 	console.log("This is Mobile");
 }
-
-
 
 // Owl carousel
 
@@ -150,8 +146,36 @@ $(document).on("click", '#knowledge-carousel .owl-item>div', function(){
 	owl_knowledge.trigger('to.owl.carousel', $(this).data('position'));
 });
 
-$(document).on("click", '#services-carousel .owl-item>div', function(){
-	owl_services.trigger('to.owl.carousel', $(this).data('position'));
+$(document).on("click", '#knowledge-carousel .owl-item>div', function(){
+	owl_knowledge.trigger('to.owl.carousel', $(this).data('position'));
+});
+
+function updateTip(tip, isOpen, carousel){
+	if(isOpen){
+		var nxt = $(carousel+" .owl-item.center");
+		setTip($(tip), nxt.find("h4").text(), nxt.find("img").attr("src"), 0);
+		$(carousel).trigger('stop.owl.autoplay');
+	}
+}
+
+$("#knowledge-carousel .owl-next").on("click", function(){	
+	updateTip("#knowledge-tip", knowledge_open, "#knowledge-carousel");
+	topOf("#showcase");
+});
+
+$("#services-carousel .owl-next").on("click", function(){
+	updateTip("#services-tip", services_open, "#services-carousel");
+	topOf("#services-carousel");
+});
+
+$("#knowledge-carousel .owl-prev").on("click", function(){	
+	updateTip("#knowledge-tip", knowledge_open, "#knowledge-carousel");
+	topOf("#showcase");
+});
+
+$("#services-carousel .owl-prev").on("click", function(){	
+	updateTip("#services-tip", services_open, "#services-carousel");
+	topOf("#services-carousel");
 });
 
 $(".knowledge .owl-item").on("click", function(){
