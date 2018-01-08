@@ -87,6 +87,12 @@ $('#services-carousel > div').mouseleave(function(e){
 	}
 })
 
+function topOf(obj){
+	$('html, body').animate({
+		scrollTop: $(obj).offset().top
+	}, 200);
+}
+
 function closeKnowledgeTip(){
 	$("#knowledge-tip").slideUp("fast", function(){
 		$("#knowledge-tip h1").text("Title");
@@ -100,9 +106,7 @@ function closeKnowledgeTip(){
 		$.scrollify.update();
 		// $.scrollify.move("#2");
 	});
-	$('html, body').animate({
-		scrollTop: $("#showcase").offset().top
-	}, 200);
+	topOf("#showcase");
 }
 
 function closeServicesTip(){
@@ -118,9 +122,7 @@ function closeServicesTip(){
 		// }
 		$.scrollify.update()		
 	});
-	$('html, body').animate({
-		scrollTop: $("#showcase").offset().top
-	}, 200);
+	topOf("#showcase");
 }
 
 $("#services-tip .back i").on("click", function(){
@@ -135,13 +137,7 @@ $("#knowledge-tip .back i").on("click", function(){
 function setTip(tip, title, image, desc){	
 	tip.find("h1").text(title);
 	tip.find("img").attr("src", image);	
-	tip.slideDown("fast");	
-	// $.scrollify({
-	// 	standardScrollElements: ".wrapper"}
-	// );
-	$('html, body').animate({
-		scrollTop: tip.offset().top
-	}, 1000);	
+	tip.slideDown("fast");
 	$.scrollify.update()
 }
 
@@ -151,6 +147,7 @@ $(".knowledge .owl-item").on("click", function(){
 		return;
 	}
 	setTip($("#knowledge-tip"), $(this).find("h4").text(), $(this).find("img").attr("src"), 0);
+	topOf("#showcase");
 	owl_knowledge.trigger('to.owl.carousel', $(this).index()+1);
 	knowledge_open = true;
 	owl_knowledge.trigger('stop.owl.autoplay');
@@ -161,6 +158,7 @@ $(".services .owl-item").on("click", function(){
 		closeServicesTip();
 		return;
 	}
+	topOf("#services-carousel");
 	owl_services.trigger('to.owl.carousel', $(this).index()+1);
 	owl_services.trigger('stop.owl.autoplay');
 	setTip($("#services-tip"), $(this).find("h4").text(), $(this).find("img").attr("src"), 0);
