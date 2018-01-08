@@ -280,6 +280,7 @@ a{
 
 	#main-header .next{
 		margin-top: 22vh;
+		margin-bottom: 10vh;
 	}
 
 	/*Showcase*/
@@ -315,7 +316,7 @@ a{
 	}
 }
 
-@media(max-height: 546px){
+@media(max-height: 546px) and (min-width: 468px){
 	#main-header .info{
 		margin-top: 10vh;
 	}
@@ -338,7 +339,8 @@ a{
 	}
 
 	.owl-section{
-		height: auto;
+		min-height: 80vh;
+		max-height: 100vh;
 	}
 }
 
