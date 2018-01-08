@@ -220,17 +220,17 @@ $.scrollify.update();
 // Scroll reveal
 
 window.sr = ScrollReveal();
-sr.reveal(".left img", {
+sr.reveal("#main-header .left img", {
 	duration: 1000,
 	origin: 'top'
 });
 
-sr.reveal(".left h1, .left p", {
+sr.reveal("#main-header .left h1, #main-header  .left p", {
 	duration: 2000,
 	origin: 'left'
 });
 
-sr.reveal(".right p", {
+sr.reveal("#main-header .right p", {
 	duration: 1000,
 	origin: 'right'
 });
