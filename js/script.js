@@ -14,19 +14,27 @@ owl_services.children().each( function( index ) {
 
 // Smooth Scroll
 
-$.scrollify({
-	section : ".sec",
-	interstitialSection : "",
-	easing: "easeOutExpo",
-	scrollSpeed: 500,
-	offset : 0,
-	scrollbars: true,
-	standardScrollElements: "",
-	setHeights: true,
-	overflowScroll: true,
-	updateHash: true,
-	touchScroll:true
-});
+
+
+if(!(/Android|webOS|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent) )) { //if not these userAgents
+	$.scrollify({
+		section : ".sec",
+		interstitialSection : "",
+		easing: "easeOutExpo",
+		scrollSpeed: 500,
+		offset : 0,
+		scrollbars: true,
+		standardScrollElements: "",
+		setHeights: true,
+		overflowScroll: true,
+		updateHash: true,
+		touchScroll:true
+	});
+}else{
+	console.log("This is Mobile");
+}
+
+
 
 // Owl carousel
 
