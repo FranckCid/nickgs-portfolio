@@ -14,7 +14,11 @@ owl_services.children().each( function( index ) {
 
 // Smooth Scroll
 
-if(!(/Android|webOS|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent) )) { //if not these userAgents
+function isMobile(){
+	return (/Android|webOS|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent) );
+}
+
+if(!isMobile()){
 	$.scrollify({
 		section : ".sec",
 		interstitialSection : "",
@@ -142,12 +146,12 @@ function setTip(tip, title, image, desc){
 	$.scrollify.update()
 }
 
-$(document).on("click", '#knowledge-carousel .owl-item>div', function(){
-	owl_knowledge.trigger('to.owl.carousel', $(this).data('position'));
+$(document).on("click", '#knowledge-carousel .owl-item', function(){
+	owl_knowledge.trigger('to.owl.carousel', $(this).find("div").data('position'));
 });
 
-$(document).on("click", '#knowledge-carousel .owl-item>div', function(){
-	owl_knowledge.trigger('to.owl.carousel', $(this).data('position'));
+$(document).on("click", '#services-carousel .owl-item', function(){
+	owl_services.trigger('to.owl.carousel', $(this).find("div").data('position'));
 });
 
 function updateTip(tip, isOpen, carousel){
@@ -160,7 +164,10 @@ function updateTip(tip, isOpen, carousel){
 
 $("#knowledge-carousel .owl-next").on("click", function(){	
 	updateTip("#knowledge-tip", knowledge_open, "#knowledge-carousel");
-	topOf("#showcase");
+	if (isMobile()) 
+		topOf("#knowledge-carousel");
+	else
+		topOf("#showcase");
 });
 
 $("#services-carousel .owl-next").on("click", function(){
@@ -170,7 +177,10 @@ $("#services-carousel .owl-next").on("click", function(){
 
 $("#knowledge-carousel .owl-prev").on("click", function(){	
 	updateTip("#knowledge-tip", knowledge_open, "#knowledge-carousel");
-	topOf("#showcase");
+	if (isMobile()) 
+		topOf("#knowledge-carousel");
+	else
+		topOf("#showcase");
 });
 
 $("#services-carousel .owl-prev").on("click", function(){	
