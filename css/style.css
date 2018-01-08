@@ -328,6 +328,7 @@ a{
 
 	#main-header .right.col-md-6{
 		margin-top: 10vh;
+		height: auto;
 	}
 
 	#main-header .next{
