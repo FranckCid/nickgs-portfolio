@@ -136,6 +136,11 @@ a{
 	border-bottom: solid 1px #ccc;
 }
 
+#showcase .owl-section small{
+	color: #666;
+	font-size: 1.3rem;
+}
+
 .owl-nav{
 	z-index: -1;
 	top: 7vh;
@@ -170,7 +175,7 @@ a{
 
 /*Tip*/
 .tip{
-	height: auto;
+	max-height: 50vh;
 	border-top: solid 1px #ccc;
 	border-bottom: solid 1px #ccc;
 	text-align: center;
@@ -180,8 +185,15 @@ a{
 	padding: 15px;
 }
 
+.tip .left{
+	max-height: 100%;
+}
+
 .tip .left img{
-	height: 10vh;
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 19vh;
 	margin: 10px;
 }
 
@@ -270,6 +282,10 @@ a{
 	}
 
 	/*Tip*/
+
+	.tip{
+		max-height: auto;
+	}
 
 	.tip img{
 		width: 100%;

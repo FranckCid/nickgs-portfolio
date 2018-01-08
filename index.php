@@ -51,7 +51,10 @@
 			<div class="wrapper">
 
 				<div class="knowledge owl-section">
-					<h1>Conhecimentos</h1>
+					<h1>Conhecimentos
+						<br/>
+						<small>Clique para saber mais</small>
+					</h1>
 
 					<div class="owl-carousel" id="knowledge-carousel">
 						<div>
@@ -102,7 +105,10 @@
 				</section>
 
 				<div class="services owl-section">
-					<h1>Produções</h1>
+					<h1>Produções
+						<br>
+						<small>Clique para saber mais</small>
+					</h1>
 
 					<div class="owl-carousel" id="services-carousel">
 						<div>

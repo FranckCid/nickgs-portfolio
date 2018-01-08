@@ -88,21 +88,23 @@ $('#services-carousel > div').mouseleave(function(e){
 })
 
 function closeKnowledgeTip(){
-	$("#knowledge-tip").slideUp("slow", function(){
+	$("#knowledge-tip").slideUp("fast", function(){
+		$("#knowledge-tip h1").text("Title");
 		knowledge_open = false;
 		owl_knowledge.trigger('play.owl.autoplay');
-		$.scrollify.move("#2");
 		if(!knowledge_open && !services_open){
 			$.scrollify({
 				standardScrollElements: ""
 			});
 		}
 		$.scrollify.update();
+		$.scrollify.move("#2");
 	});
 }
 
 function closeServicesTip(){
-	$("#services-tip").slideUp("slow", function(){
+	$("#services-tip").slideUp("fast", function(){
+		$("#services-tip h1").text("Title");
 		services_open = false;
 		owl_services.trigger('play.owl.autoplay');
 		$.scrollify.move("#2");
