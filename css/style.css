@@ -84,7 +84,7 @@ a{
 	margin-top: 20px;
 }
 
-#main-header .next:hover{	
+#main-header .next i:hover{	
 	animation: pause;
 	transition: .5s;
 	cursor: pointer;
@@ -295,7 +295,7 @@ a{
 	100%{transform: translate(0, -10px);}
 }
 
-#main-header .next{
+#main-header .next i{
 	animation-name: bounce;
 	animation-duration: .8s;
 	animation-iteration-count: infinite;
