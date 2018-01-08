@@ -106,6 +106,10 @@ a{
 	height: 100%;
 }
 
+#showcase .owl-item p{
+	display: none;
+}
+
 #showcase .owl-item img{
 	padding: 20px;
 	height: 100px;

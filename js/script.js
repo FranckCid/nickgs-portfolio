@@ -142,6 +142,7 @@ $("#knowledge-tip .back i").on("click", function(){
 function setTip(tip, title, image, desc){	
 	tip.find("h1").text(title);
 	tip.find("img").attr("src", image);	
+	tip.find("p").text(desc);
 	tip.slideDown("fast");
 	$.scrollify.update()
 }
@@ -157,7 +158,7 @@ $(document).on("click", '#services-carousel .owl-item', function(){
 function updateTip(tip, isOpen, carousel){
 	if(isOpen){
 		var nxt = $(carousel+" .owl-item.center");
-		setTip($(tip), nxt.find("h4").text(), nxt.find("img").attr("src"), 0);
+		setTip($(tip), nxt.find("h4").text(), nxt.find("img").attr("src"), nxt.find("p").text());
 		$(carousel).trigger('stop.owl.autoplay');
 	}
 }
@@ -193,7 +194,7 @@ $(".knowledge .owl-item").on("click", function(){
 		closeKnowledgeTip();
 		return;
 	}
-	setTip($("#knowledge-tip"), $(this).find("h4").text(), $(this).find("img").attr("src"), 0);
+	setTip($("#knowledge-tip"), $(this).find("h4").text(), $(this).find("img").attr("src"), $(this).find("p").text());
 	topOf("#showcase");
 	owl_knowledge.trigger('stop.owl.autoplay');
 	knowledge_open = true;
@@ -206,7 +207,7 @@ $(".services .owl-item").on("click", function(){
 	}
 	topOf("#services-carousel");
 	owl_services.trigger('stop.owl.autoplay');
-	setTip($("#services-tip"), $(this).find("h4").text(), $(this).find("img").attr("src"), 0);
+	setTip($("#services-tip"), $(this).find("h4").text(), $(this).find("img").attr("src"),  $(this).find("p").text());
 	services_open = true;
 });
 
