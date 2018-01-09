@@ -91,17 +91,17 @@ owl_services.owlCarousel({
 
 // Event handle
 
-$('#knowledge-carousel > div').mouseleave(function(e){
+$('#knowledge-carousel').mouseleave(function(e){
 	if(!knowledge_open){
-		owl_knowledge.trigger('next.owl.carousel');
+		//owl_knowledge.trigger('next.owl.carousel');
 		owl_knowledge.trigger('play.owl.autoplay');
 	}else{
 		owl_knowledge.trigger('stop.owl.autoplay');
 	}
 })
-$('#services-carousel > div').mouseleave(function(e){
+$('#services-carousel').mouseleave(function(e){
 	if(!services_open){
-		owl_services.trigger('next.owl.carousel');
+		//owl_services.trigger('next.owl.carousel');
 		owl_services.trigger('play.owl.autoplay');
 	}else{
 		owl_services.trigger('stop.owl.autoplay');
