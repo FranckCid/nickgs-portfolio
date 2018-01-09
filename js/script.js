@@ -104,11 +104,11 @@ function stopIfServicesOpen(){
 	}
 }
 
-owl_knowledge.on("refresh.owl.carousel", function(e, spd){
+owl_knowledge.on("refresh.owl.carousel", function(e){
 	stopIfKnowledgeOpen();
 });
 
-owl_knowledge.on("refresh.owl.carousel", function(e, spd){
+owl_services.on("refresh.owl.carousel", function(e){
 	stopIfServicesOpen();
 });
 
