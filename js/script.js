@@ -101,16 +101,11 @@ function stopIfServicesOpen(){
 }
 
 owl_knowledge.on("refresh.owl.carousel", function(e, spd){
-	// stopIfKnowledgeOpen();
-	console.log("a");
+	stopIfKnowledgeOpen();
 });
 
-owl_knowledge.on("translated.owl.carousel", function(e){
-	// stopIfKnowledgeOpen();
-});
-
-owl_services.on("translated.owl.carousel", function(e){
-	// stopIfServicesOpen();
+owl_knowledge.on("refresh.owl.carousel", function(e, spd){
+	stopIfServicesOpen();
 });
 
 owl_knowledge.on("dragged.owl.carousel", function(e){
