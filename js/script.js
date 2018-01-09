@@ -38,65 +38,72 @@ if(!isMobile()){
 
 // Owl carousel
 
-owl_knowledge.owlCarousel({
-	center:true,
-	loop:true,
-	margin:10,
-	autoplay:true,
-	autoplayTimeout:2000,
-	autoplayHoverPause:true,
-	nav: true,
-	navText: [
-	"<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>",
-	"<i class=\"fa fa-chevron-right\" aria-hidden=\"true\"></i>"
-	],
-	responsiveClass:true,
-	responsive:{
-		0:{
-			items:1
-		},
-		600:{
-			items:3
-		},
-		1000:{
-			items:5
+function startKnowledgeOwl(play){
+	owl_knowledge.owlCarousel({
+		center:true,
+		loop:true,
+		margin:10,
+		autoplay:play,
+		autoplayTimeout:2000,
+		autoplayHoverPause:true,
+		nav: true,
+		navText: [
+		"<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>",
+		"<i class=\"fa fa-chevron-right\" aria-hidden=\"true\"></i>"
+		],
+		responsiveClass:true,
+		responsive:{
+			0:{
+				items:1
+			},
+			600:{
+				items:3
+			},
+			1000:{
+				items:5
+			}
 		}
-	}
-});
-owl_services.owlCarousel({
-	center:true,
-	loop:true,
-	margin:10,
-	autoplay:true,
-	autoplayTimeout: 2000,
-	autoplayHoverPause:true,
-	nav: true,
-	navText: [
-	"<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>",
-	"<i class=\"fa fa-chevron-right\" aria-hidden=\"true\"></i>"
-	],
-	responsiveClass:true,
-	responsive:{
-		0:{
-			items:1
-		},
-		600:{
-			items:2
-		},
-		1000:{
-			items:3
+	});
+}
+
+function startServicesOwl(play){
+	owl_services.owlCarousel({
+		center:true,
+		loop:true,
+		margin:10,
+		autoplay:play,
+		autoplayTimeout: 2000,
+		autoplayHoverPause:true,
+		nav: true,
+		navText: [
+		"<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>",
+		"<i class=\"fa fa-chevron-right\" aria-hidden=\"true\"></i>"
+		],
+		responsiveClass:true,
+		responsive:{
+			0:{
+				items:1
+			},
+			600:{
+				items:2
+			},
+			1000:{
+				items:3
+			}
 		}
-	}
-});
+	});
+}
 
 function stopIfKnowledgeOpen(){
 	if(knowledge_open){
 		owl_knowledge.trigger('stop.owl.autoplay');
+		startKnowledgeOwl(false);
 	}
 }
 function stopIfServicesOpen(){
 	if(services_open){
 		owl_services.trigger('stop.owl.autoplay');
+		startServicesOwl(false);
 	}
 }
 
@@ -254,6 +261,8 @@ $("#services-carousel .owl-prev").on("click", function(){
 
 $('#knowledge-tip').hide();
 $('#services-tip').hide();
+startKnowledgeOwl(true);
+startServicesOwl(true);
 $.scrollify.update();
 
 // Scroll reveal
