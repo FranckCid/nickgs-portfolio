@@ -68,7 +68,7 @@ owl_services.owlCarousel({
 	loop:true,
 	margin:10,
 	autoplay:true,
-	autoplayTimeout:2000,
+	autoplayTimeout: 2000,
 	autoplayHoverPause:true,
 	nav: true,
 	navText: [
@@ -95,12 +95,16 @@ $('#knowledge-carousel > div').mouseleave(function(e){
 	if(!knowledge_open){
 		owl_knowledge.trigger('next.owl.carousel');
 		owl_knowledge.trigger('play.owl.autoplay');
+	}else{
+		owl_knowledge.trigger('stop.owl.autoplay');
 	}
 })
 $('#services-carousel > div').mouseleave(function(e){
 	if(!services_open){
 		owl_services.trigger('next.owl.carousel');
 		owl_services.trigger('play.owl.autoplay');
+	}else{
+		owl_services.trigger('stop.owl.autoplay');
 	}
 })
 
