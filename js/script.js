@@ -89,29 +89,39 @@ owl_services.owlCarousel({
 	}
 });
 
-
-owl_knowledge.on("dragged.owl.carousel", function(e){
-	if(knowledge_open){
+function stopIfKnowledgeOpen(){
+if(knowledge_open){
 		owl_knowledge.trigger('stop.owl.autoplay');
 	}
+}
+function stopIfServicesOpen(){
+if(services_open){
+		owl_services.trigger('stop.owl.autoplay');
+	}
+}
+
+owl_knowledge.on("translate.owl.carousel", function(e){
+	stopIfKnowledgeOpen();
+});
+
+owl_services.on("translate.owl.carousel", function(e){
+	stopIfServicesOpen();
+});
+
+owl_knowledge.on("dragged.owl.carousel", function(e){
+	stopIfKnowledgeOpen();
 });
 
 owl_services.on("dragged.owl.carousel", function(e){
-	if(services_open){
-		owl_services.trigger('stop.owl.autoplay');
-	}
+	stopIfServicesOpen();
 });
 
 owl_knowledge.on("resized.owl.carousel", function(e){
-	if(knowledge_open){
-		owl_knowledge.trigger('stop.owl.autoplay');
-	}
+	stopIfKnowledgeOpen();
 });
 
 owl_services.on("resized.owl.carousel", function(e){
-	if(services_open){
-		owl_services.trigger('stop.owl.autoplay');
-	}
+	stopIfServicesOpen();
 });
 
 // Event handle
