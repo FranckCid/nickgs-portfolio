@@ -123,38 +123,7 @@ function stopIfServicesOpen(){
 	}
 }
 
-owl_knowledge.on("translate.owl.carousel", function(e){
-	stopIfKnowledgeOpen();
-});
-
-owl_services.on("translate.owl.carousel", function(e){
-	stopIfServicesOpen();
-});
-
-owl_knowledge.on("refresh.owl.carousel", function(e){
-	stopIfKnowledgeOpen();
-});
-
-owl_services.on("refresh.owl.carousel", function(e){
-	stopIfServicesOpen();
-});
-
-
-owl_knowledge.on("dragged.owl.carousel", function(e){
-	stopIfKnowledgeOpen();
-});
-
-owl_services.on("dragged.owl.carousel", function(e){
-	stopIfServicesOpen();
-});
-
-owl_knowledge.on("resized.owl.carousel", function(e){
-	stopIfKnowledgeOpen();
-});
-
-owl_services.on("resized.owl.carousel", function(e){
-	stopIfServicesOpen();
-});
+setTimeout(function(){stopIfKnowledgeOpen(); stopIfServicesOpen();},800);
 
 // Event handle
 
