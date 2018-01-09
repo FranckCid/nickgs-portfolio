@@ -15,7 +15,7 @@ owl_services.children().each( function( index ) {
 // Smooth Scroll
 
 $(window).resize(function() {
-  	if(!knowledge_open){
+	if(!knowledge_open){
 		//owl_knowledge.trigger('next.owl.carousel');
 		owl_knowledge.trigger('play.owl.autoplay');
 	}else{
@@ -106,20 +106,24 @@ owl_services.owlCarousel({
 // Event handle
 
 $('#knowledge-carousel').mouseleave(function(e){
-	if(!knowledge_open){
-		//owl_knowledge.trigger('next.owl.carousel');
-		owl_knowledge.trigger('play.owl.autoplay');
-	}else{
-		owl_knowledge.trigger('stop.owl.autoplay');
+	if(!isMobile()){
+		if(!knowledge_open){
+			//owl_knowledge.trigger('next.owl.carousel');
+			owl_knowledge.trigger('play.owl.autoplay');
+		}else{
+			owl_knowledge.trigger('stop.owl.autoplay');
+		}
 	}
 })
 $('#services-carousel').mouseleave(function(e){
-	if(!services_open){
+	if(!isMobile()){
+		if(!services_open){
 		//owl_services.trigger('next.owl.carousel');
 		owl_services.trigger('play.owl.autoplay');
 	}else{
 		owl_services.trigger('stop.owl.autoplay');
 	}
+}
 })
 
 function topOf(obj){
