@@ -106,6 +106,7 @@ function stopIfKnowledgeOpen(){
 		carousel.settings.autoplay = false; //don't know if both are necessary
 		carousel.options.autoplay = false;
 		owl_knowledge.trigger('refresh.owl.carousel');
+		startKnowledgeOwl(false);
 	}
 }
 function stopIfServicesOpen(){
@@ -120,10 +121,12 @@ function stopIfServicesOpen(){
 		carousel.settings.autoplay = false; //don't know if both are necessary
 		carousel.options.autoplay = false;
 		owl_services.trigger('refresh.owl.carousel');
+		startServicesOwl(false);
 	}
 }
 
 setTimeout(function(){stopIfKnowledgeOpen(); stopIfServicesOpen();},800);
+alert("v1");
 
 // Event handle
 
