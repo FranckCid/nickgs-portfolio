@@ -106,7 +106,6 @@ function stopIfKnowledgeOpen(){
 		carousel.settings.autoplay = false; //don't know if both are necessary
 		carousel.options.autoplay = false;
 		owl_knowledge.trigger('refresh.owl.carousel');
-		startKnowledgeOwl(false);
 	}
 }
 function stopIfServicesOpen(){
@@ -121,12 +120,41 @@ function stopIfServicesOpen(){
 		carousel.settings.autoplay = false; //don't know if both are necessary
 		carousel.options.autoplay = false;
 		owl_services.trigger('refresh.owl.carousel');
-		startServicesOwl(false);
 	}
 }
 
-setTimeout(function(){stopIfKnowledgeOpen(); stopIfServicesOpen();},800);
-alert("v1");
+// owl_knowledge.on("translate.owl.carousel", function(e){
+// 	stopIfKnowledgeOpen();
+// });
+
+// owl_services.on("translate.owl.carousel", function(e){
+// 	stopIfServicesOpen();
+// });
+
+// owl_knowledge.on("refresh.owl.carousel", function(e){
+// 	stopIfKnowledgeOpen();
+// });
+
+// owl_services.on("refresh.owl.carousel", function(e){
+// 	stopIfServicesOpen();
+// });
+
+
+owl_knowledge.on("dragged.owl.carousel", function(e){
+	stopIfKnowledgeOpen();
+});
+
+owl_services.on("dragged.owl.carousel", function(e){
+	stopIfServicesOpen();
+});
+
+owl_knowledge.on("resized.owl.carousel", function(e){
+	stopIfKnowledgeOpen();
+});
+
+owl_services.on("resized.owl.carousel", function(e){
+	stopIfServicesOpen();
+});
 
 // Event handle
 
