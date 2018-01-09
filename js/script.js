@@ -92,11 +92,15 @@ owl_services.owlCarousel({
 function stopIfKnowledgeOpen(){
 	if(knowledge_open){
 		owl_knowledge.trigger('stop.owl.autoplay');
+	}else{
+		owl_knowledge.trigger('play.owl.autoplay');
 	}
 }
 function stopIfServicesOpen(){
 	if(services_open){
 		owl_services.trigger('stop.owl.autoplay');
+	}else{
+		owl_services.trigger('play.owl.autoplay');
 	}
 }
 
@@ -128,23 +132,13 @@ owl_services.on("resized.owl.carousel", function(e){
 
 $('#knowledge-carousel').mouseleave(function(e){
 	if(!isMobile()){
-		if(!knowledge_open){
-			//owl_knowledge.trigger('next.owl.carousel');
-			owl_knowledge.trigger('play.owl.autoplay');
-		}else{
-			owl_knowledge.trigger('stop.owl.autoplay');
-		}
+		stopIfKnowledgeOpen();
 	}
 })
 $('#services-carousel').mouseleave(function(e){
 	if(!isMobile()){
-		if(!services_open){
-		//owl_services.trigger('next.owl.carousel');
-		owl_services.trigger('play.owl.autoplay');
-	}else{
-		owl_services.trigger('stop.owl.autoplay');
+		stopIfServicesOpen();
 	}
-}
 })
 
 function topOf(obj){
@@ -253,6 +247,8 @@ $("#services-carousel .owl-prev").on("click", function(){
 
 $('#knowledge-tip').hide();
 $('#services-tip').hide();
+owl_knowledge.trigger('play.owl.autoplay');
+owl_services.trigger('play.owl.autoplay');
 $.scrollify.update();
 
 // Scroll reveal
