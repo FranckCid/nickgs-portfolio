@@ -97,7 +97,7 @@ function startServicesOwl(play){
 function stopIfKnowledgeOpen(){
 	if(knowledge_open){
 		// owl_knowledge.trigger('stop.owl.autoplay');
-		startKnowledgeOwl(false);
+		// startKnowledgeOwl(false);
 	}
 }
 function stopIfServicesOpen(){
