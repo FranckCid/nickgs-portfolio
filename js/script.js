@@ -97,19 +97,34 @@ function startServicesOwl(play){
 function stopIfKnowledgeOpen(){
 	if(knowledge_open){
 		owl_knowledge.trigger('stop.owl.autoplay');
-		startKnowledgeOwl(false);
+		//simple one (EDIT: not enough to make it work after testing it):
+		//$('.owl-carousel').trigger('changeOption.owl.carousel', { autoplay: false });
+
+		//or more complicated (will work for one carousel only, or else use 'each'):
+		//EDIT: this one seems to work
+		var carousel = owl_knowledge.data('owl.carousel');
+		carousel.settings.autoplay = false; //don't know if both are necessary
+		carousel.options.autoplay = false;
+		owl_knowledge.trigger('refresh.owl.carousel');
 	}
 }
 function stopIfServicesOpen(){
 	if(services_open){
 		owl_services.trigger('stop.owl.autoplay');
-		startServicesOwl(false);
+		//simple one (EDIT: not enough to make it work after testing it):
+		//$('.owl-carousel').trigger('changeOption.owl.carousel', { autoplay: false });
+
+		//or more complicated (will work for one carousel only, or else use 'each'):
+		//EDIT: this one seems to work
+		var carousel = owl_services.data('owl.carousel');
+		carousel.settings.autoplay = false; //don't know if both are necessary
+		carousel.options.autoplay = false;
+		owl_services.trigger('refresh.owl.carousel');
 	}
 }
 
 owl_knowledge.on("translate.owl.carousel", function(e){
 	stopIfKnowledgeOpen();
-	console.log("a");
 });
 
 owl_services.on("translate.owl.carousel", function(e){
