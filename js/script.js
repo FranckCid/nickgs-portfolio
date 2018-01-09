@@ -196,13 +196,15 @@ $(document).on("click", '#knowledge-carousel .owl-item', function(){
 		return;
 	}
 	knowledge_open = true;
+	owl_knowledge.trigger('stop.owl.autoplay');
 	owl_knowledge.trigger('to.owl.carousel', $(this).find("div").data('position'));
+	owl_knowledge.trigger('stop.owl.autoplay');
 	setTip($("#knowledge-tip"), $(this).find("h4").text(), $(this).find("img").attr("src"), $(this).find("p").text());
 	topOf("#showcase");
-	owl_knowledge.trigger('stop.owl.autoplay');
 });
 
 $(document).on("click", '#services-carousel .owl-item', function(){
+	owl_knowledge.trigger("stop.owl.autoplay");
 	owl_services.trigger('to.owl.carousel', $(this).find("div").data('position'));
 	owl_knowledge.trigger("stop.owl.autoplay");
 	services_open = true;
@@ -211,7 +213,6 @@ $(document).on("click", '#services-carousel .owl-item', function(){
 		return;
 	}
 	setTip($("#services-tip"), $(this).find("h4").text(), $(this).find("img").attr("src"),  $(this).find("p").text());
-	owl_services.trigger('stop.owl.autoplay');
 	topOf("#services-carousel");
 });
 
@@ -253,8 +254,6 @@ $("#services-carousel .owl-prev").on("click", function(){
 
 $('#knowledge-tip').hide();
 $('#services-tip').hide();
-owl_knowledge.trigger('play.owl.autoplay');
-owl_services.trigger('play.owl.autoplay');
 $.scrollify.update();
 
 // Scroll reveal
