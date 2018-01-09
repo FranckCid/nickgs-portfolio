@@ -14,20 +14,6 @@ owl_services.children().each( function( index ) {
 
 // Smooth Scroll
 
-$(window).resize(function() {
-	if(!knowledge_open){
-		//owl_knowledge.trigger('next.owl.carousel');
-		owl_knowledge.trigger('play.owl.autoplay');
-	}else{
-		owl_knowledge.trigger('stop.owl.autoplay');
-	}
-	if(!services_open){
-		owl_services.trigger('play.owl.autoplay');
-	}else{
-		owl_services.trigger('stop.owl.autoplay');
-	}
-});
-
 function isMobile(){
 	return (/Android|webOS|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent) );
 }
@@ -100,6 +86,31 @@ owl_services.owlCarousel({
 		1000:{
 			items:3
 		}
+	}
+});
+
+
+owl_knowledge.on("dragged.owl.carousel", function(e){
+	if(knowledge_open){
+		owl_knowledge.trigger('stop.owl.autoplay');
+	}
+});
+
+owl_services.on("dragged.owl.carousel", function(e){
+	if(services_open){
+		owl_services.trigger('stop.owl.autoplay');
+	}
+});
+
+owl_knowledge.on("resized.owl.carousel", function(e){
+	if(knowledge_open){
+		owl_knowledge.trigger('stop.owl.autoplay');
+	}
+});
+
+owl_services.on("resized.owl.carousel", function(e){
+	if(services_open){
+		owl_services.trigger('stop.owl.autoplay');
 	}
 });
 
