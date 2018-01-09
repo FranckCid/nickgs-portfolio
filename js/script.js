@@ -14,6 +14,20 @@ owl_services.children().each( function( index ) {
 
 // Smooth Scroll
 
+$(window).resize(function() {
+  	if(!knowledge_open){
+		//owl_knowledge.trigger('next.owl.carousel');
+		owl_knowledge.trigger('play.owl.autoplay');
+	}else{
+		owl_knowledge.trigger('stop.owl.autoplay');
+	}
+	if(!services_open){
+		owl_services.trigger('play.owl.autoplay');
+	}else{
+		owl_services.trigger('stop.owl.autoplay');
+	}
+});
+
 function isMobile(){
 	return (/Android|webOS|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent) );
 }
