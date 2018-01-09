@@ -102,6 +102,7 @@ if(services_open){
 
 owl_knowledge.on("translate.owl.carousel", function(e){
 	stopIfKnowledgeOpen();
+	owl_knowledge.trigger("prev.owl.carousel", 10000000);
 });
 
 owl_services.on("translate.owl.carousel", function(e){
