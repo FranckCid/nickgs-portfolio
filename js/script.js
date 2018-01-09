@@ -57,7 +57,7 @@ function startKnowledgeOwl(play){
 				items:1
 			},
 			600:{
-				items:3
+				items:2
 			},
 			1000:{
 				items:5
@@ -96,12 +96,13 @@ function startServicesOwl(play){
 
 function stopIfKnowledgeOpen(){
 	if(knowledge_open){
-		owl_knowledge.trigger('stop.owl.autoplay');
+		// owl_knowledge.trigger('stop.owl.autoplay');
+		startKnowledgeOwl(false);
 	}
 }
 function stopIfServicesOpen(){
 	if(services_open){
-		owl_services.trigger('stop.owl.autoplay');
+		// owl_services.trigger('stop.owl.autoplay');
 	}
 }
 
