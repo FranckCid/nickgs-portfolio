@@ -104,6 +104,15 @@ function stopIfServicesOpen(){
 	}
 }
 
+owl_knowledge.on("translate.owl.carousel", function(e){
+	stopIfKnowledgeOpen();
+	console.log("a");
+});
+
+owl_services.on("translate.owl.carousel", function(e){
+	stopIfServicesOpen();
+});
+
 owl_knowledge.on("refresh.owl.carousel", function(e){
 	stopIfKnowledgeOpen();
 });
@@ -111,6 +120,7 @@ owl_knowledge.on("refresh.owl.carousel", function(e){
 owl_services.on("refresh.owl.carousel", function(e){
 	stopIfServicesOpen();
 });
+
 
 owl_knowledge.on("dragged.owl.carousel", function(e){
 	stopIfKnowledgeOpen();
