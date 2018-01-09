@@ -196,13 +196,28 @@ function setTip(tip, title, image, desc){
 }
 
 $(document).on("click", '#knowledge-carousel .owl-item', function(){
+	if($("#knowledge-tip h1").text() == $(this).find("h4").text()){
+		closeKnowledgeTip();
+		return;
+	}
+	knowledge_open = true;
 	owl_knowledge.trigger('to.owl.carousel', $(this).find("div").data('position'));
-	owl_knowledge.trigger("stop.owl.autoplay");
+	setTip($("#knowledge-tip"), $(this).find("h4").text(), $(this).find("img").attr("src"), $(this).find("p").text());
+	topOf("#showcase");
+	owl_knowledge.trigger('stop.owl.autoplay');
 });
 
 $(document).on("click", '#services-carousel .owl-item', function(){
 	owl_services.trigger('to.owl.carousel', $(this).find("div").data('position'));
 	owl_knowledge.trigger("stop.owl.autoplay");
+	services_open = true;
+	if($("#services-tip h1").text() == $(this).find("h4").text()){
+		closeServicesTip();
+		return;
+	}
+	setTip($("#services-tip"), $(this).find("h4").text(), $(this).find("img").attr("src"),  $(this).find("p").text());
+	owl_services.trigger('stop.owl.autoplay');
+	topOf("#services-carousel");
 });
 
 function updateTip(tip, isOpen, carousel){
@@ -238,28 +253,6 @@ $("#knowledge-carousel .owl-prev").on("click", function(){
 
 $("#services-carousel .owl-prev").on("click", function(){	
 	updateTip("#services-tip", services_open, "#services-carousel");
-	topOf("#services-carousel");
-});
-
-$(".knowledge .owl-item").on("click", function(){
-	knowledge_open = true;
-	if($("#knowledge-tip h1").text() == $(this).find("h4").text()){
-		closeKnowledgeTip();
-		return;
-	}
-	setTip($("#knowledge-tip"), $(this).find("h4").text(), $(this).find("img").attr("src"), $(this).find("p").text());
-	topOf("#showcase");
-	owl_knowledge.trigger('stop.owl.autoplay');
-});
-
-$(".services .owl-item").on("click", function(){
-	services_open = true;
-	if($("#services-tip h1").text() == $(this).find("h4").text()){
-		closeServicesTip();
-		return;
-	}
-	setTip($("#services-tip"), $(this).find("h4").text(), $(this).find("img").attr("src"),  $(this).find("p").text());
-	owl_services.trigger('stop.owl.autoplay');
 	topOf("#services-carousel");
 });
 
