@@ -97,47 +97,29 @@ function startServicesOwl(play){
 function stopIfKnowledgeOpen(){
 	if(knowledge_open){
 		owl_knowledge.trigger('stop.owl.autoplay');
-		//simple one (EDIT: not enough to make it work after testing it):
-		//$('.owl-carousel').trigger('changeOption.owl.carousel', { autoplay: false });
-
-		//or more complicated (will work for one carousel only, or else use 'each'):
-		//EDIT: this one seems to work
-		var carousel = owl_knowledge.data('owl.carousel');
-		carousel.settings.autoplay = false; //don't know if both are necessary
-		carousel.options.autoplay = false;
-		owl_knowledge.trigger('refresh.owl.carousel');
 	}
 }
 function stopIfServicesOpen(){
 	if(services_open){
 		owl_services.trigger('stop.owl.autoplay');
-		//simple one (EDIT: not enough to make it work after testing it):
-		//$('.owl-carousel').trigger('changeOption.owl.carousel', { autoplay: false });
-
-		//or more complicated (will work for one carousel only, or else use 'each'):
-		//EDIT: this one seems to work
-		var carousel = owl_services.data('owl.carousel');
-		carousel.settings.autoplay = false; //don't know if both are necessary
-		carousel.options.autoplay = false;
-		owl_services.trigger('refresh.owl.carousel');
 	}
 }
 
-// owl_knowledge.on("translate.owl.carousel", function(e){
-// 	stopIfKnowledgeOpen();
-// });
+owl_knowledge.on("translate.owl.carousel", function(e){
+	stopIfKnowledgeOpen();
+});
 
-// owl_services.on("translate.owl.carousel", function(e){
-// 	stopIfServicesOpen();
-// });
+owl_services.on("translate.owl.carousel", function(e){
+	stopIfServicesOpen();
+});
 
-// owl_knowledge.on("refresh.owl.carousel", function(e){
-// 	stopIfKnowledgeOpen();
-// });
+owl_knowledge.on("refresh.owl.carousel", function(e){
+	stopIfKnowledgeOpen();
+});
 
-// owl_services.on("refresh.owl.carousel", function(e){
-// 	stopIfServicesOpen();
-// });
+owl_services.on("refresh.owl.carousel", function(e){
+	stopIfServicesOpen();
+});
 
 
 owl_knowledge.on("dragged.owl.carousel", function(e){
@@ -157,17 +139,6 @@ owl_services.on("resized.owl.carousel", function(e){
 });
 
 // Event handle
-
-$('#knowledge-carousel').mouseleave(function(e){
-	if(!isMobile()){
-		stopIfKnowledgeOpen();
-	}
-})
-$('#services-carousel').mouseleave(function(e){
-	if(!isMobile()){
-		stopIfServicesOpen();
-	}
-})
 
 function topOf(obj){
 	$('html, body').animate({
@@ -239,81 +210,76 @@ $(document).on("click", '#services-carousel .owl-item', function(){
 });
 
 function updateTip(tip, isOpen, carousel){
-	if(isOpen){
-		var nxt = $(carousel+" .owl-item.center");
-		setTip($(tip), nxt.find("h4").text(), nxt.find("img").attr("src"), nxt.find("p").text());
-		$(carousel).trigger('stop.owl.autoplay');
-	}
+	var nxt = $(carousel+" .owl-item.center");
+	setTip($(tip), nxt.find("h4").text(), nxt.find("img").attr("src"), nxt.find("p").text());
+	$(carousel).trigger('stop.owl.autoplay');
 }
 
-$("#knowledge-carousel .owl-next").on("click", function(){	
+$(document).on("click", "#knowledge-carousel .owl-next", function(){
 	updateTip("#knowledge-tip", knowledge_open, "#knowledge-carousel");
-	knowledge_open = true;
-	if (isMobile()) 
-		topOf("#knowledge-carousel");
-	else
-		topOf("#showcase");
+	topOf("#knowledge-carousel");
 });
 
-$("#services-carousel .owl-next").on("click", function(){
-	updateTip("#services-tip", services_open, "#services-carousel");
-	services_open = true;
-	topOf("#services-carousel");
-});
-
-$("#knowledge-carousel .owl-prev").on("click", function(){	
-	updateTip("#knowledge-tip", knowledge_open, "#knowledge-carousel");
-	if (isMobile()) 
-		topOf("#knowledge-carousel");
-	else
-		topOf("#showcase");
-});
-
-$("#services-carousel .owl-prev").on("click", function(){	
+$(document).on("click", "#services-carousel .owl-next", function(){
 	updateTip("#services-tip", services_open, "#services-carousel");
 	topOf("#services-carousel");
 });
 
-$('#knowledge-tip').hide();
-$('#services-tip').hide();
-startKnowledgeOwl(true);
-startServicesOwl(true);
-$.scrollify.update();
-
-// Scroll reveal
-
-window.sr = ScrollReveal();
-sr.reveal("#main-header .left img", {
-	duration: 1000,
-	origin: 'top'
+$(document).on("click", "#knowledge-carousel .owl-prev", function(){
+	updateTip("#knowledge-tip", knowledge_open, "#knowledge-carousel");
+	topOf("#knowledge-carousel");
 });
 
-sr.reveal("#main-header .left h1, #main-header  .left p", {
-	duration: 2000,
-	origin: 'left'
+$(document).on("click", "#services-carousel .owl-prev", function(){
+	updateTip("#services-tip", services_open, "#services-carousel");
+	topOf("#services-carousel");
 });
 
-sr.reveal("#main-header .right p", {
-	duration: 1000,
-	origin: 'right'
-});
+$(document).ready(function(){
 
-sr.reveal(".social", {
-	duration: 2000,
-	origin: 'top'
-});
 
-sr.reveal(".next", {
-	duration: 1000,
-	origin: 'top'
-});
+	$('#knowledge-tip').hide();
+	$('#services-tip').hide();
+	startKnowledgeOwl(true);
+	startServicesOwl(true);
+	$.scrollify.update();
 
-sr.reveal(".owl-section h1", {
-	duration: 1000,
-	origin: 'top'
-});
+	// Scroll reveal
 
-sr.reveal(".owl-carousel", {
+	window.sr = ScrollReveal();
+	sr.reveal("#main-header .left img", {
+		duration: 1000,
+		origin: 'top'
+	});
+
+	sr.reveal("#main-header .left h1, #main-header .left p", {
+		duration: 2000,
+		origin: 'left'
+	});
+
+	sr.reveal("#main-header .right p", {
+		duration: 1000,
+		origin: 'right'
+	});
+
+	sr.reveal(".social", {
+		duration: 2000,
+		origin: 'top'
+	});
+
+	sr.reveal(".next", {
+		duration: 1000,
+		origin: 'top'
+	});
+
+	sr.reveal(".owl-section h1", {
+		duration: 1000,
+		origin: 'top'
+	});
+
+	sr.reveal(".owl-carousel", {
 	duration: 2000,
 	origin: 'bottom'
+});
+
 });
