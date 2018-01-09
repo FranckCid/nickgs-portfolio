@@ -90,23 +90,27 @@ owl_services.owlCarousel({
 });
 
 function stopIfKnowledgeOpen(){
-if(knowledge_open){
+	if(knowledge_open){
 		owl_knowledge.trigger('stop.owl.autoplay');
 	}
 }
 function stopIfServicesOpen(){
-if(services_open){
+	if(services_open){
 		owl_services.trigger('stop.owl.autoplay');
 	}
 }
 
-owl_knowledge.on("translate.owl.carousel", function(e){
-	stopIfKnowledgeOpen();
-	owl_knowledge.trigger("prev.owl.carousel", 10000000);
+owl_knowledge.on("refresh.owl.carousel", function(e, spd){
+	// stopIfKnowledgeOpen();
+	console.log("a");
 });
 
-owl_services.on("translate.owl.carousel", function(e){
-	stopIfServicesOpen();
+owl_knowledge.on("translated.owl.carousel", function(e){
+	// stopIfKnowledgeOpen();
+});
+
+owl_services.on("translated.owl.carousel", function(e){
+	// stopIfServicesOpen();
 });
 
 owl_knowledge.on("dragged.owl.carousel", function(e){
@@ -193,10 +197,12 @@ function setTip(tip, title, image, desc){
 
 $(document).on("click", '#knowledge-carousel .owl-item', function(){
 	owl_knowledge.trigger('to.owl.carousel', $(this).find("div").data('position'));
+	owl_knowledge.trigger("stop.owl.autoplay");
 });
 
 $(document).on("click", '#services-carousel .owl-item', function(){
 	owl_services.trigger('to.owl.carousel', $(this).find("div").data('position'));
+	owl_knowledge.trigger("stop.owl.autoplay");
 });
 
 function updateTip(tip, isOpen, carousel){
@@ -236,6 +242,7 @@ $("#services-carousel .owl-prev").on("click", function(){
 });
 
 $(".knowledge .owl-item").on("click", function(){
+	knowledge_open = true;
 	if($("#knowledge-tip h1").text() == $(this).find("h4").text()){
 		closeKnowledgeTip();
 		return;
@@ -243,18 +250,17 @@ $(".knowledge .owl-item").on("click", function(){
 	setTip($("#knowledge-tip"), $(this).find("h4").text(), $(this).find("img").attr("src"), $(this).find("p").text());
 	topOf("#showcase");
 	owl_knowledge.trigger('stop.owl.autoplay');
-	knowledge_open = true;
 });
 
 $(".services .owl-item").on("click", function(){
+	services_open = true;
 	if($("#services-tip h1").text() == $(this).find("h4").text()){
 		closeServicesTip();
 		return;
 	}
-	topOf("#services-carousel");
-	owl_services.trigger('stop.owl.autoplay');
 	setTip($("#services-tip"), $(this).find("h4").text(), $(this).find("img").attr("src"),  $(this).find("p").text());
-	services_open = true;
+	owl_services.trigger('stop.owl.autoplay');
+	topOf("#services-carousel");
 });
 
 $('#knowledge-tip').hide();
