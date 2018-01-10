@@ -245,7 +245,7 @@ $(document).on("click", "#services-carousel .owl-next", function(){
 		updateTip("#services-tip", services_open, "#services-carousel");
 		topOf("#services-carousel");
 		owl_services.trigger('stop.owl.autoplay');
-		knowledgeIndex = $("#services-carousel .owl-item.center").find("div").data('position');;
+		servicesIndex = $("#services-carousel .owl-item.center").find("div").data('position');;
 	}
 });
 
@@ -263,7 +263,7 @@ $(document).on("click", "#services-carousel .owl-prev", function(){
 		updateTip("#services-tip", services_open, "#services-carousel");
 		topOf("#services-carousel");
 		owl_services.trigger('stop.owl.autoplay');
-		knowledgeIndex = $("#services-carousel .owl-item.center").find("div").data('position');;
+		servicesIndex = $("#services-carousel .owl-item.center").find("div").data('position');;
 	}
 });
 
