@@ -183,12 +183,14 @@ $("#knowledge-tip .back i").on("click", function(){
 $("#knowledge-carousel > div").on("mouseleave", function(){
 	if(!knowledge_open){
 		owl_knowledge.trigger('play.owl.autoplay');
+		owl_knowledge.trigger('next.owl.carousel');
 	}
 });
 
 $("#services-carousel > div").on("mouseleave", function(){
 	if(!services_open){
 		owl_services.trigger('play.owl.autoplay');
+		owl_services.trigger('next.owl.carousel');
 	}
 });
 
