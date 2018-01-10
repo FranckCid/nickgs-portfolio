@@ -21,6 +21,11 @@ a{
 	color: #ececec;
 }
 
+.owl-next, .owl-prev{
+	background-color: transparent;
+	-webkit-appearance: none;
+}
+
 .container{
 	width: 80%;
 }
