@@ -380,6 +380,14 @@ a{
 	}
 }
 
+@media(max-width: 380px){
+	#showcase .owl-item img{
+		filter: none;
+		height: 150px;
+		padding: 0;
+	}
+}
+
 /* Animations */
 
 @keyframes bounce{
