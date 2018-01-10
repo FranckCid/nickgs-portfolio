@@ -191,14 +191,14 @@ $("#knowledge-tip .back i").on("click", function(){
 	closeKnowledgeTip();
 });
 
-$("#knowledge-carousel > div").on("mouseleave", function(){
+$("#knowledge-carousel").on("mouseleave", function(){
 	if(!knowledge_open && !isMobile()){
 		owl_knowledge.trigger('play.owl.autoplay');
 		owl_knowledge.trigger('next.owl.carousel');
 	}
 });
 
-$("#services-carousel > div").on("mouseleave", function(){
+$("#services-carousel").on("mouseleave", function(){
 	if(!services_open && !isMobile()){
 		owl_services.trigger('play.owl.autoplay');
 		owl_services.trigger('next.owl.carousel');
@@ -252,45 +252,41 @@ function updateTip(tip, isOpen, carousel){
 
 $(document).on("click", "#knowledge-carousel .owl-next", function(){
 	if(knowledge_open){
-		updateTip("#knowledge-tip", knowledge_open, "#knowledge-carousel");
-		topOf("#knowledge-carousel");
-		owl_knowledge.trigger('next.owl.carousel');
-		owl_services.trigger('stop.owl.autoplay');
+		owl_knowledge.trigger('stop.owl.autoplay');
 		knowledgeIndex = $("#knowledge-carousel .owl-item.center").find("div").data('position');;
 		owl_knowledge.trigger('to.owl.carousel', knowledgeIndex);
+		updateTip("#knowledge-tip", knowledge_open, "#knowledge-carousel");
+		topOf("#knowledge-carousel");
 	}
 });
 
 $(document).on("click", "#services-carousel .owl-next", function(){
 	if(services_open){
-		updateTip("#services-tip", services_open, "#services-carousel");
-		topOf("#services-carousel");
-		owl_services.trigger('next.owl.carousel');
 		owl_services.trigger('stop.owl.autoplay');
 		servicesIndex = $("#services-carousel .owl-item.center").find("div").data('position');
 		owl_services.trigger('to.owl.carousel', servicesIndex);
+		updateTip("#services-tip", services_open, "#services-carousel");
+		topOf("#services-carousel");
 	}
 });
 
 $(document).on("click", "#knowledge-carousel .owl-prev", function(){
 	if(knowledge_open){
-		updateTip("#knowledge-tip", knowledge_open, "#knowledge-carousel");
-		topOf("#knowledge-carousel");
-		owl_knowledge.trigger('prev.owl.carousel');
 		owl_knowledge.trigger('stop.owl.autoplay');
 		knowledgeIndex = $("#knowledge-carousel .owl-item.center").find("div").data('position');;
 		owl_knowledge.trigger('to.owl.carousel', knowledgeIndex);
+		updateTip("#knowledge-tip", knowledge_open, "#knowledge-carousel");
+		topOf("#knowledge-carousel");
 	}
 });
 
 $(document).on("click", "#services-carousel .owl-prev", function(){
 	if(services_open){
-		updateTip("#services-tip", services_open, "#services-carousel");
-		topOf("#services-carousel");
-		owl_services.trigger('prev.owl.carousel');
-		owl_services.trigger('stop.owl.autoplay');		
+		owl_services.trigger('stop.owl.autoplay');
 		servicesIndex = $("#services-carousel .owl-item.center").find("div").data('position');;
 		owl_services.trigger('to.owl.carousel', servicesIndex);
+		updateTip("#services-tip", services_open, "#services-carousel");
+		topOf("#services-carousel");
 	}
 });
 
@@ -307,12 +303,6 @@ $(document).ready(function(){
 	function a(){
 		stopIfServicesOpen();
 		stopIfKnowledgeOpen();
-		if(isMobile()){
-			if(knowledge_open)
-				owl_knowledge.trigger('to.owl.carousel', knowledgeIndex);
-			if(services_open)
-			owl_services.trigger('to.owl.carousel', servicesIndex);
-		}
 		setTimeout(a,1000);
 	}
 	setTimeout(a,5800);
