@@ -26,7 +26,7 @@ if(!isMobile()){
 		interstitialSection : "",
 		easing: "easeOutExpo",
 		scrollSpeed: 500,
-		offset : 20,
+		offset : 21,
 		scrollbars: true,
 		standardScrollElements: "",
 		setHeights: true,
