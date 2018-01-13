@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/owl.carousel.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/fontawesome-all.min.css">
-	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="stylesheet" type="text/css" href="./css/portfolio.min.css">
 </head>
 <body>
 	<header id="main-header" class="sec">
@@ -221,6 +221,6 @@
 	<script type="text/javascript" src="./js/owl.autoplay.js"></script>
 	<script type="text/javascript" src="./js/jquery.scrollify.js"></script>
 	<script type="text/javascript" src="./js/scrollreveal.min.js"></script>
-	<script type="text/javascript" src="./js/script.js"></script>
+	<script type="text/javascript" src="./js/portfolio.min.js"></script>
 </body>
 </html>
