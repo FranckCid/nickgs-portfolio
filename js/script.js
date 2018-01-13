@@ -26,7 +26,7 @@ if(!isMobile()){
 		interstitialSection : "",
 		easing: "easeOutExpo",
 		scrollSpeed: 500,
-		offset : 0,
+		offset : 20,
 		scrollbars: true,
 		standardScrollElements: "",
 		setHeights: true,
@@ -135,14 +135,6 @@ owl_services.on("resized.owl.carousel", function(e){
 	  $(this).attr( 'data-position', index ); // NB: .attr() instead of .data()
 	});
 });
-
-// owl_knowledge.on("dragged.owl.carousel", function(e){
-// 	stopIfKnowledgeOpen();
-// });
-
-// owl_services.on("dragged.owl.carousel", function(e){
-// 	stopIfServicesOpen();
-// });
 
 owl_knowledge.on("resized.owl.carousel", function(e){
 	stopIfKnowledgeOpen();
